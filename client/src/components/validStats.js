@@ -1,6 +1,6 @@
 const stats = {
   helm: new Set([
-    'attack', 'block', 'concentration', ' crit spell', 'defense', 'earth resist',
+    'attack', 'block', 'concentration', 'crit spell', 'defense', 'earth resist',
     'enmity boost', 'evasion', 'fire resist', 'flight speed', 'healing boost', 'magic boost',
     'magic resist', 'magic suppr', 'magical accuracy', 'max hp', 'max mp', 'pvp attack',
     'pvp defense', 'paralysis resist', 'parry', 'silence resist', 'spell fortitude', 'spell resist',
@@ -14,7 +14,7 @@ const stats = {
     'strike fortitude', 'water resist', 'wind resist'
   ]),
   acc: new Set([
-    'attack', 'block', 'concentration', ' crit spell','crit strike', 'defense',
+    'attack', 'block', 'concentration', 'crit spell','crit strike', 'defense',
     'earth resist', 'evasion', 'fire resist', 'flight time', 'healing boost', 'magic boost',
     'magic resist', 'magic suppr', 'magical accuracy', 'max hp', 'max mp', 'pvp attack',
     'paralysis penetration', 'paralysis resist', 'silence penetration', 'silence resist',
@@ -22,7 +22,7 @@ const stats = {
   ]),
   wings: new Set([
     'accuracy', 'attack', 'crit spell', 'crit strike', 'defense', 'flight time', 'healing boost',
-    'magic boost', 'magical accuracy', 'max hp', 'max mp', ' paralysis penetration',
+    'magic boost', 'magical accuracy', 'max hp', 'max mp', 'paralysis penetration',
     'paralysis resist', 'silenece penetration', 'silence resist', 'spell resist', 'strike fortitude',
     'strike resist'
   ]),

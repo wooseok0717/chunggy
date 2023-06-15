@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import stats from './validStats.js';
+import types from './types.js';
 
 export default function Search () {
 
-  console.log(stats);
+  console.log(types)
+  console.log(stats)
+  const [category, setCategory] = useState('');
+
+  useEffect(()=> {
+    console.log(types[category])
+  }, [category])
 
   return (
     <div className='search'>
       Category:
-      <select>
+      <select onChange={e=>{setCategory(e.target.value)}}>
         <option value="" disabled selected>Select a category</option>
-        <option value='Weapon'>Weapon</option>
-        <option value='Armor'>Armor</option>
+        <option value='accessary'>Accessary</option>
+        <option value='weapon'>Weapon</option>
+        <option value='armor'>Armor</option>
+        <option value='wing'>Wing</option>
       </select>
       Type:
       <select className='type'>
