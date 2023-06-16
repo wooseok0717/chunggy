@@ -4,7 +4,7 @@ import axios from 'axios';
 export default function ItemNumber () {
   const [idInput, setIdInput] = useState();
   const handleIdSubmit = () => {
-    axios.get(`api/items/${idInput}`)
+    axios.get(`api/items/${idInput}/Id`)
     .then(res => {
       console.log(res)
     })
