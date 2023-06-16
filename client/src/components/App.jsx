@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Search from './Search.jsx';
+import Add from './Add.jsx';
 
 export default function App () {
 
@@ -8,6 +9,7 @@ export default function App () {
     <>
       <Header/>
       {/* <Search/> */}
+      <Add />
     </>
   )
 }
