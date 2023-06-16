@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function ItemNumber () {
-  const [itemName, setItemName] = useState();
+export default function ItemNumber ({setItemName}) {
+  const [itemInput, setItemInput] = useState();
 
   const handleIdSubmit = () => {
-    axios.get(`api/items/${itemName}/Name`)
+    axios.get(`api/items/${itemInput}/Name`)
     .then(res => {
       console.log(res)
     })
     .catch(res => {
-      console.log('doesnt exist');
+      setItemName(itemInput);
     })
   }
 
@@ -19,8 +19,8 @@ export default function ItemNumber () {
       <input
         type='search'
         placeholder='Item Name'
-        className='numberInput'
-        onChange={e => setItemName(e.target.value)}
+        className='nameInput'
+        onChange={e => setItemInput(e.target.value)}
       />
       <button
         type='button'

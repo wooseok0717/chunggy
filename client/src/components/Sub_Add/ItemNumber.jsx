@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function ItemNumber () {
+export default function ItemNumber ({setItemNumber}) {
   const [idInput, setIdInput] = useState();
   const handleIdSubmit = () => {
     axios.get(`api/items/${idInput}/Id`)
     .then(res => {
-      console.log(res)
+      console.log('already exists');
+      setItemNumber(undefined);
     })
     .catch(res => {
-      console.log('doesnt exist');
+      // future enhancement : modal to show that it is valid id
+      setItemNumber(idInput);
     })
   }
   return (

@@ -9,18 +9,21 @@ import Level from './Sub_Add/Level.jsx';
 
 export default function Add () {
   const [itemNumber, setItemNumber] = useState();
+  const [itemName, setItemName] = useState();
   const [part, setPart] = useState();
   const [type, setType] = useState();
-  console.log(part);
+  const [grade, setGrade] = useState();
+  const [level, setLevel] = useState();
+
   return (
     <div className='Add'>
       <ItemNumber setItemNumber={setItemNumber} />
-      <ItemName />
+      <ItemName setItemName={setItemName}/>
       <Part setPart={setPart} />
       <Type part={part} setType={setType} />
-      <Grade />
-      <Level />
-      <button onClick={() => {}}>Add</button>
+      <Grade setGrade={setGrade}/>
+      <Level setLevel={setLevel}/>
+      <button onClick={() => {console.log(itemNumber, itemName, part, type, grade, level)}}>Add</button>
       <button>Cancel</button>
     </div>
   )

@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function Grade () {
+export default function Grade ({setGrade}) {
 
   return (
     <div className='grade'>
-      <select>
+      <select onChange={e=> setGrade(e.target.value)}>
         <option value='common'>common</option>
         <option value='superior'>superior</option>
         <option value='heroic'>heroic</option>
