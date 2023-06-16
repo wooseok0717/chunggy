@@ -1,4 +1,5 @@
 import React , { useState } from 'react';
+import axios from 'axios';
 import stats from './validStats.js';
 import ItemNumber from './Sub_Add/ItemNumber.jsx';
 import ItemName from './Sub_Add/ItemName.jsx';
@@ -15,6 +16,12 @@ export default function Add () {
   const [grade, setGrade] = useState();
   const [level, setLevel] = useState();
 
+  const handleSubmit = () => {
+    axios.post('/api/items', {
+      itemNumber, itemName, part, type, grade, level
+    })
+  }
+
   return (
     <div className='Add'>
       <ItemNumber setItemNumber={setItemNumber} />
@@ -23,7 +30,7 @@ export default function Add () {
       <Type part={part} setType={setType} />
       <Grade setGrade={setGrade}/>
       <Level setLevel={setLevel}/>
-      <button onClick={() => {console.log(itemNumber, itemName, part, type, grade, level)}}>Add</button>
+      <button onClick={handleSubmit}>Add</button>
       <button>Cancel</button>
     </div>
   )

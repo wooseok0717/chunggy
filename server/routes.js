@@ -10,4 +10,9 @@ router.get('/items/:itemId/Id', controllers.getItemById);
 
 router.get('/items/:itemName/Name', controllers.getItemByName);
 
+router.post('/items', (req, res) => {
+  console.log(req.body)
+  res.send('arrived');
+})
+
 module.exports = router;
