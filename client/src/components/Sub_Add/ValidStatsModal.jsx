@@ -7,7 +7,7 @@ export default function ValidStatsModal({setClicked, stats}) {
     <div className='modal'>
       <div className='modal-content'>
         <div className="modal-header">
-          <h4 className='modal-title'>Title</h4>
+          <h4 className='modal-title'>Possible stats</h4>
         </div>
         <div className='modal-body'>
           {stats.map(stat => {
