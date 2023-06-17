@@ -11,6 +11,7 @@ import Stats from './Sub_Add/Stats.jsx';
 import Manastone from './Sub_Add/Manastone.jsx';
 import Enchant from './Sub_Add/Enchant.jsx';
 import SetItem from './Sub_Add/SetItem.jsx';
+import Abyss from './Sub_Add/Abyss.jsx';
 
 export default function Add () {
   const [itemNumber, setItemNumber] = useState();
@@ -62,6 +63,7 @@ export default function Add () {
       <Manastone setManastone={setManastone} manastone={manastone} />
       <Enchant setMaxEnchant={setMaxEnchant} />
       <SetItem setSetItem={setSetItem} />
+      <Abyss />
       <button onClick={handleSubmit}>Add</button>
       <button>Cancel</button>
     </div>
