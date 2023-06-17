@@ -10,6 +10,7 @@ import Level from './Sub_Add/Level.jsx';
 import Stats from './Sub_Add/Stats.jsx';
 import Manastone from './Sub_Add/Manastone.jsx';
 import Enchant from './Sub_Add/Enchant.jsx';
+import SetItem from './Sub_Add/SetItem.jsx';
 
 export default function Add () {
   const [itemNumber, setItemNumber] = useState();
@@ -23,6 +24,7 @@ export default function Add () {
   const [lineTwo, setLineTwo] = useState({});
   const [manastone, setManastone] = useState({});
   const [maxEnchant, setMaxEnchant] = useState();
+  const [setItem, setSetItem] = useState();
 
   useEffect(() => {
     if (part !== 'armor') {
@@ -59,6 +61,7 @@ export default function Add () {
       />
       <Manastone setManastone={setManastone} manastone={manastone} />
       <Enchant setMaxEnchant={setMaxEnchant} />
+      <SetItem setSetItem={setSetItem} />
       <button onClick={handleSubmit}>Add</button>
       <button>Cancel</button>
     </div>
