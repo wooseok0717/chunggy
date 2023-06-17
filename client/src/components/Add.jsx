@@ -8,6 +8,8 @@ import Type from './Sub_Add/Type.jsx';
 import Grade from './Sub_Add/Grade.jsx';
 import Level from './Sub_Add/Level.jsx';
 import Stats from './Sub_Add/Stats.jsx';
+import Manastone from './Sub_Add/Manastone.jsx';
+import Enchant from './Sub_Add/Enchant.jsx';
 
 export default function Add () {
   const [itemNumber, setItemNumber] = useState();
@@ -19,17 +21,21 @@ export default function Add () {
   const [level, setLevel] = useState();
   const [lineOne, setLineOne] = useState({});
   const [lineTwo, setLineTwo] = useState({});
+  const [manastone, setManastone] = useState({});
+  const [maxEnchant, setMaxEnchant] = useState();
 
   useEffect(() => {
     if (part !== 'armor') {
       setMaterial(undefined);
     }
   },[part]);
+
   useEffect(() => {
     setType(undefined);
-  },[part])
+  },[part]);
+
   const handleSubmit = () => {
-    console.log(lineOne, lineTwo)
+    console.log(maxEnchant)
     axios.post('/api/items', {
       itemNumber, itemName, part, type, grade, level
     })
@@ -51,6 +57,8 @@ export default function Add () {
         lineTwo={lineTwo}
         setLineTwo={setLineTwo}
       />
+      <Manastone setManastone={setManastone} manastone={manastone} />
+      <Enchant setMaxEnchant={setMaxEnchant} />
       <button onClick={handleSubmit}>Add</button>
       <button>Cancel</button>
     </div>
