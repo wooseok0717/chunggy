@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ValidStatsModal({setClicked, stats}) {
+export default function ValidStatsModal({setClicked, stats, setListStats, listStats}) {
   // console.log(stats, 'from valid')
   return (
 
@@ -14,7 +14,12 @@ export default function ValidStatsModal({setClicked, stats}) {
             return (
               <button
                 value={stat}
-                onClick={() => {console.log(stat)}}
+                onClick={() => {
+                  setClicked(false);
+                  if (!listStats.includes(stat)) {
+                    setListStats(listStats.concat(stat))
+                  }
+                }}
               >
                 {stat}
               </button>

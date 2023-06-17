@@ -17,7 +17,8 @@ export default function Add () {
   const [material, setMaterial] = useState();
   const [grade, setGrade] = useState();
   const [level, setLevel] = useState();
-
+  const [lineOne, setLineOne] = useState({});
+  const [lineTwo, setLineTwo] = useState({});
 
   useEffect(() => {
     if (part !== 'armor') {
@@ -28,6 +29,7 @@ export default function Add () {
     setType(undefined);
   },[part])
   const handleSubmit = () => {
+    console.log(lineOne, lineTwo)
     axios.post('/api/items', {
       itemNumber, itemName, part, type, grade, level
     })
@@ -41,7 +43,14 @@ export default function Add () {
       <Type part={part} setType={setType} setMaterial={setMaterial} />
       <Grade setGrade={setGrade}/>
       <Level setLevel={setLevel}/>
-      <Stats part={part} type={type} />
+      <Stats
+        part={part}
+        type={type}
+        lineOne={lineOne}
+        setLineOne={setLineOne}
+        lineTwo={lineTwo}
+        setLineTwo={setLineTwo}
+      />
       <button onClick={handleSubmit}>Add</button>
       <button>Cancel</button>
     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import LineOneStats from './LineOneStats.jsx';
 import LineTwoStats from './LineTwoStats.jsx';
 
-export default function Stats ({part, type}) {
+export default function Stats ({part, type, lineOne, lineTwo, setLineOne, setLineTwo}) {
 
   if (type === undefined) {
     return (
@@ -11,8 +11,8 @@ export default function Stats ({part, type}) {
   }
   return (
     <div className='stats'>
-      <LineOneStats type={type} part={part}/>
-      <LineTwoStats />
+      <LineOneStats type={type} part={part} lineOne={lineOne} setLineOne={setLineOne}/>
+      <LineTwoStats type={type} part={part} lineTwo={lineTwo} setLineTwo={setLineTwo}/>
     </div>
   )
 }
