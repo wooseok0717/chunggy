@@ -12,6 +12,7 @@ import Manastone from './Sub_Add/Manastone.jsx';
 import Enchant from './Sub_Add/Enchant.jsx';
 import SetItem from './Sub_Add/SetItem.jsx';
 import Abyss from './Sub_Add/Abyss.jsx';
+import Conditioning from './Sub_Add/Conditioning.jsx';
 
 export default function Add () {
   const [itemNumber, setItemNumber] = useState();
@@ -64,6 +65,7 @@ export default function Add () {
       <Enchant setMaxEnchant={setMaxEnchant} />
       <SetItem setSetItem={setSetItem} />
       <Abyss />
+      <Conditioning />
       <button onClick={handleSubmit}>Add</button>
       <button>Cancel</button>
     </div>
