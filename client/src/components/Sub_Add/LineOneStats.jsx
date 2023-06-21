@@ -1,19 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import validStats from '../validStats.js';
+import React, {useState} from 'react';
 import ValidStatsModal from './ValidStatsModal.jsx';
 
 export default function LineOneStats ({part ,type, lineOne, setLineOne}) {
   const [clicked, setClicked] = useState(false);
-  const [stats, setStats] = useState();
   const [listStats, setListStats] = useState([]);
 
-  useEffect(() => {
-    if (part === 'weapon') {
-      setStats(validStats.weapon)
-    } else if (part === 'armor') {
-      setStats(validStats[type])
-    }
-  },[part, type])
   return (
     <div className='lineOne'>
       Line One Stats
@@ -24,7 +15,7 @@ export default function LineOneStats ({part ,type, lineOne, setLineOne}) {
       </button>
       {listStats.map(statEntry => {
         return (
-          <div className='statEntry'>
+          <div className='statEntry' key={statEntry}>
             <span className='statLable'>{statEntry}</span>
             <input
               onChange={e => {
@@ -39,9 +30,10 @@ export default function LineOneStats ({part ,type, lineOne, setLineOne}) {
       {clicked && (
         <ValidStatsModal
           setClicked={setClicked}
-          stats={stats}
           setListStats={setListStats}
           listStats={listStats}
+          part={part}
+          type={type}
           />)}
     </div>
   )

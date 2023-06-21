@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
+import validStats from '../validStats.js';
 
-export default function ValidStatsModal({setClicked, stats, setListStats, listStats}) {
-  // console.log(stats, 'from valid')
+export default function ValidStatsModal({setClicked, setListStats, listStats, part, type}) {
+
+  const [stats, setStats] = useState([]);
+
+  useEffect(() => {
+    if (part === 'weapon') {
+      setStats(validStats.weapon)
+    } else if (part === 'armor') {
+      setStats(validStats[type])
+    }
+  },[])
+
   return (
 
     <div className='modal'>
@@ -13,6 +24,7 @@ export default function ValidStatsModal({setClicked, stats, setListStats, listSt
           {stats.map(stat => {
             return (
               <button
+                key={stat}
                 value={stat}
                 onClick={() => {
                   setClicked(false);
