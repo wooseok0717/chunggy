@@ -1,6 +1,5 @@
 import React from 'react';
-import LineOneStats from './LineOneStats.jsx';
-import LineTwoStats from './LineTwoStats.jsx';
+import StatListEntry from './StatListEntry.jsx';
 
 export default function Stats ({part, type, lineOne, lineTwo, setLineOne, setLineTwo}) {
 
@@ -11,8 +10,20 @@ export default function Stats ({part, type, lineOne, lineTwo, setLineOne, setLin
   }
   return (
     <div className='stats'>
-      <LineOneStats type={type} part={part} lineOne={lineOne} setLineOne={setLineOne}/>
-      <LineTwoStats type={type} part={part} lineTwo={lineTwo} setLineTwo={setLineTwo}/>
+      <StatListEntry
+        prompt={'Line One Stats:'}
+        type={type}
+        part={part}
+        list={lineOne}
+        setList={setLineOne}
+      />
+      <StatListEntry
+        prompt={'Line Two Stats:'}
+        type={type}
+        part={part}
+        list={lineTwo}
+        setList={setLineTwo}
+      />
     </div>
   )
 }
