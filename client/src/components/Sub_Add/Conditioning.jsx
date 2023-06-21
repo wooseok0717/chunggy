@@ -12,7 +12,16 @@ export default function Conditioning() {
         <input type='radio' name='condition' value='yes' /> Yes
         <input type='radio' name='condition' value='no' /> No
       </form>
-      {hasCondition && (<div>yes</div> )}
+      {hasCondition && (
+        <div>
+          <div className='conditioning1'>
+            Level 1:
+          </div>
+          <div className='conditioning2'>
+            Level 2:
+          </div>
+        </div>
+      )}
     </div>
   )
 }

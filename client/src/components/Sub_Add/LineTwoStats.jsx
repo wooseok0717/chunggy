@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ValidStatsModal from './ValidStatsModal.jsx';
+import StatsForm from './StatsForm.jsx'
 
 export default function LineTwoStats ({part ,type, lineTwo, setLineTwo}) {
   const [clicked, setClicked] = useState(false);
@@ -13,20 +14,7 @@ export default function LineTwoStats ({part ,type, lineTwo, setLineTwo}) {
       >
         add more stats
       </button>
-      {listStats.map(statEntry => {
-        return (
-          <div className='statEntry' key={statEntry}>
-            <span className='statLable'>{statEntry}</span>
-            <input
-              onChange={e => {
-                const temp = lineTwo;
-                temp[statEntry] = e.target.value;
-                setLineTwo(temp)
-              }}
-            />
-          </div>
-        )
-      })}
+      <StatsForm list={listStats} setValue={setLineTwo} />
       {clicked && (
         <ValidStatsModal
           setClicked={setClicked}
