@@ -21,6 +21,7 @@ export default function ValidStatsModal({setClicked, setListStats, listStats, pa
           <h4 className='modal-title'>Possible stats</h4>
         </div>
         <div className='modal-body'>
+          {!stats.length && (<>Select part and type</>)}
           {stats.map(stat => {
             return (
               <button

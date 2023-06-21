@@ -24,6 +24,8 @@ export default function Add () {
   const [level, setLevel] = useState();
   const [lineOne, setLineOne] = useState({});
   const [lineTwo, setLineTwo] = useState({});
+  const [conditionOne, setConditionOne] = useState({});
+  const [conditionTwo, setConditionTwo] = useState({});
   const [manastone, setManastone] = useState({});
   const [maxEnchant, setMaxEnchant] = useState();
   const [setItem, setSetItem] = useState();
@@ -65,7 +67,14 @@ export default function Add () {
       <Enchant setMaxEnchant={setMaxEnchant} />
       <SetItem setSetItem={setSetItem} />
       <Abyss />
-      <Conditioning />
+      <Conditioning
+        part={part}
+        type={type}
+        conditionOne={conditionOne}
+        conditionTwo={conditionTwo}
+        setConditionOne={setConditionOne}
+        setConditionTwo={setConditionTwo}
+      />
       <button onClick={handleSubmit}>Add</button>
       <button>Cancel</button>
     </div>
