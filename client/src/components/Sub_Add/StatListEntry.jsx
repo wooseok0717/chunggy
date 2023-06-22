@@ -14,7 +14,7 @@ export default function StatListEntry ({prompt, part ,type, list, setList}) {
       >
         add more stats
       </button>
-      <StatsForm list={listStats} setValue={setList} />
+      <StatsForm list={list} listStats={listStats} setValue={setList} />
       {clicked && (
         <ValidStatsModal
           setClicked={setClicked}

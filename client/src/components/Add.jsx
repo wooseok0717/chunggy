@@ -14,7 +14,7 @@ import SetItem from './Sub_Add/SetItem.jsx';
 import Abyss from './Sub_Add/Abyss.jsx';
 import Conditioning from './Sub_Add/Conditioning.jsx';
 
-export default function Add () {
+export default function Add ({currentUser}) {
   const [itemNumber, setItemNumber] = useState();
   const [itemName, setItemName] = useState();
   const [part, setPart] = useState();
@@ -41,7 +41,12 @@ export default function Add () {
   },[part]);
 
   const handleSubmit = () => {
-    console.log(maxEnchant)
+    const config = {
+      itemNumber, itemName, part, type, material, grade, level,
+      lineOne, lineTwo, conditionOne, conditionTwo, manastone,
+      maxEnchant, setItem, currentUser
+    }
+    console.log(config);
     axios.post('/api/items', {
       itemNumber, itemName, part, type, grade, level
     })

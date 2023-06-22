@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import StatListEntry from './StatListEntry.jsx';
 
-export default function Conditioning({part, type, conditionOne, conditionTwo, setCondtionOne, setCondtionTwo}) {
+export default function Conditioning({part, type, conditionOne, conditionTwo, setConditionOne, setConditionTwo}) {
 
   const [hasCondition, setHasCondition] = useState(false);
   return (
@@ -20,14 +20,14 @@ export default function Conditioning({part, type, conditionOne, conditionTwo, se
             type={type}
             part={part}
             list={conditionOne}
-            setList={setCondtionOne}
+            setList={setConditionOne}
           />
           <StatListEntry
             prompt={'Level 2 Conditioning'}
             type={type}
             part={part}
             list={conditionTwo}
-            setList={setCondtionTwo}
+            setList={setConditionTwo}
           />
         </div>
       )}
