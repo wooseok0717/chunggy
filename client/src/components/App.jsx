@@ -13,7 +13,7 @@ export default function App () {
       <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} />
       <Header/>
       {/* <Search/> */}
-      <Add />
+      <Add currentUser={currentUser} />
     </>
   )
 }

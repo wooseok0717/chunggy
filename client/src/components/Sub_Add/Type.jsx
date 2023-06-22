@@ -22,6 +22,7 @@ export default function Type ( {part, setType, setMaterial} ) {
       </select>
       {part === 'armor' && (
         <select onChange={e => {setMaterial(e.target.value)}}>
+          <option value=''selected disabled hidden>choose a type</option>
           <option value='chain'>chain</option>
           <option value='cloth'>cloth</option>
           <option value='leather'>leather</option>
