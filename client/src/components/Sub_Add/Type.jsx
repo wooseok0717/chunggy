@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function Type ( {part, setType, setMaterial} ) {
   const validTypes = {
     weapon : ['bow', 'chainsword', 'dagger', 'greatsword', 'mace', 'orb', 'polearm', 'spellbook', 'staff', 'sword'],
     armor : ['top', 'bottom', 'shoulder', 'gloves', 'shoes'],
-    accessary : ['belt', 'earing', 'headgear', 'necklace', 'ring', 'wing'],
+    accessary : ['belt', 'earing', 'headgear', 'necklace', 'ring', 'wings'],
     shield : ['shield']
   }
 
-  if (part === undefined) {
+  useEffect(() => {
+
+  },[part])
+  if (part === undefined || part === 'shield') {
     return (<></>)
   }
   return (

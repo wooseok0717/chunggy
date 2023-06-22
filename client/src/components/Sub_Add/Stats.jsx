@@ -3,7 +3,7 @@ import StatListEntry from './StatListEntry.jsx';
 
 export default function Stats ({part, type, lineOne, lineTwo, setLineOne, setLineTwo}) {
 
-  if (type === undefined) {
+  if (type === undefined && part !== 'shield') {
     return (
       <div className='stats'>please select part and type to add stats</div>
     )

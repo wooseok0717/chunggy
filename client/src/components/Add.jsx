@@ -1,6 +1,5 @@
 import React , { useState, useEffect } from 'react';
 import axios from 'axios';
-import stats from './validStats.js';
 import ItemNumber from './Sub_Add/ItemNumber.jsx';
 import ItemName from './Sub_Add/ItemName.jsx';
 import Part from './Sub_Add/Part.jsx';
