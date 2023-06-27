@@ -10,10 +10,7 @@ router.get('/items/:itemId/Id', controllers.getItemById);
 
 router.get('/items/:itemName/Name', controllers.getItemByName);
 
-router.post('/items', (req, res) => {
-  console.log(req.body)
-  res.send('arrived');
-});
+router.post('/items', controllers.createItem);
 
 router.get('/set/:setName', (req, res) => {
   console.log(req.params.setName);

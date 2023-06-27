@@ -4,7 +4,7 @@ const router = require('./routes');
 const path = require('path');
 
 const app = express();
-const PORT = 8000;
+const PORT = 8080;
 
 app.use(morgan('dev'));
 app.use(express.json());

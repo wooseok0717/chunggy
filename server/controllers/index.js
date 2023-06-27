@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 module.exports ={
   getItemById: (req, res) => {
     // dummy code
@@ -17,5 +19,9 @@ module.exports ={
     } else {
       res.status(200).send({itemNumber: 1234, itemName: 'chunggy dagger'})
     }
-  }
+  },
+  createItem: (req, res) => {
+    axios.post('http://127.0.0.1:3000/items', req.body)
+    res.send('arrived');
+  },
 }
