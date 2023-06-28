@@ -6,7 +6,9 @@ export default function ValidStatsModal({setClicked, setListStats, listStats, pa
   const [stats, setStats] = useState([]);
 
   useEffect(() => {
-    if (part === 'weapon') {
+    if (part === 'sets') {
+      setStats(validStats.sets);
+    } else if (part === 'weapon') {
       setStats(validStats.weapon)
     } else if (part === 'armor') {
       setStats(validStats[type])
