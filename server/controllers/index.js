@@ -1,27 +1,49 @@
 const axios = require('axios');
 
+const baseURL = 'http://127.0.0.1:3000'
+
 module.exports ={
   getItemById: (req, res) => {
-    // dummy code
-    // console.log(typeof(req.params.itemId))
-    if (req.params.itemId !== '1234') {
-      res.status(404).send(`doesn't exist`);
-    } else {
-      res.status(200).send({itemNumber: 1234, itemName: 'chunggy dagger'})
+    const config = {
+      method: 'get',
+      baseURL,
+      url: `/items/number/?itemNumber=${req.params.itemId}`
     }
-    // actual code
-    // res.status(200).send(req.params.itemId)
+    axios(config)
+    .then(() => {
+      res.send('item exists!!')
+    })
+    .catch(() => {
+      res.send('item doesnt exist!')
+    })
   },
   getItemByName: (req, res) => {
-    console.log(req.params.itemName)
-    if (req.params.itemName !== 'chunggy dagger') {
-      res.status(404).send(`doesn't exist`);
-    } else {
-      res.status(200).send({itemNumber: 1234, itemName: 'chunggy dagger'})
+    const config = {
+      method: 'get',
+      baseURL,
+      url: `/items/name/?itemName=${req.params.itemName}`
     }
+    axios(config)
+    .then(() => {
+      res.send('item exists!!')
+    })
+    .catch(() => {
+      res.send('item doesnt exist!')
+    })
   },
   createItem: (req, res) => {
-    axios.post('http://127.0.0.1:3000/items', req.body)
-    res.send('arrived');
+    const config = {
+      method:'post',
+      baseURL,
+      url:'/items',
+      data: req.body,
+    }
+    axios(config)
+    .then(() => {
+      res.sendStatus(201);
+    })
+    .catch(() => {
+      res.sendStatus(404);
+    })
   },
 }
