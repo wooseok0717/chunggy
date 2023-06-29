@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import SetModal from './SetModal.jsx';
 
-export default function SetItem() {
+export default function SetItem({setSetItem}) {
 
   const [clicked, setClicked] = useState(false);
   const [isSet, setIsSet] = useState(false);
@@ -20,7 +20,7 @@ export default function SetItem() {
         <input type='radio' value='no' name='setItem' /><span>No</span>
       </form>
       {isSet && (<button onClick={() => {setClicked(true)}} >add a set</button>)}
-      {clicked && (<SetModal setClicked={setClicked}/>)}
+      {clicked && (<SetModal setSetItem={setSetItem} setClicked={setClicked}/>)}
     </div>
   )
 }
