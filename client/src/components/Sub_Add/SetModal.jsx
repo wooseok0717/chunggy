@@ -8,9 +8,10 @@ export default function SetModal({setClicked}) {
   const [addSet, setAddSet] = useState(false);
 
   const handleChange = e => {
-    console.log(e.target.value)
-    axios.get(`api/sets/${e.target.value}`)
-    .then(x => setFilteredSet(x.data))
+    if (e.target.value.length) {
+      axios.get(`api/sets/${e.target.value}/name`)
+      .then(res => setFilteredSet(res.data));
+    }
   }
   return (
     <div className='modal'>
@@ -27,7 +28,7 @@ export default function SetModal({setClicked}) {
           <input onChange={handleChange}/>
           <div className='currentList'>
           {filteredSet.map(setEntry => {
-            return (<button>{setEntry}</button>)
+            return (<button>{setEntry.name}</button>)
           })}
           </div>
         </div>

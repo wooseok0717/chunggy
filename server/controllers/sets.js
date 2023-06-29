@@ -17,5 +17,20 @@ module.exports ={
     .catch((err) => {
       res.send('failed???');
     })
-  }
+  },
+  searchByName: (req, res) => {
+    console.log(req.params.setName);
+    const config = {
+      method: 'get',
+      baseURL,
+      url: `/items/sets/${req.params.setName}`
+    }
+    axios(config)
+    .then(data => {
+      res.send(data.data);
+    })
+    .catch(() => {
+      res.send('error');
+    })
+  },
 }

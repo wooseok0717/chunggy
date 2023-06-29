@@ -8,10 +8,7 @@ router.get('/items/:itemId/Id', controllers.items.getItemById);
 
 router.get('/items/:itemName/Name', controllers.items.getItemByName);
 
-router.get('/set/:setName', (req, res) => {
-  console.log(req.params.setName);
-  res.send(['anuhart ranger set', 'anuhart assassin set', 'anuhart templar set', 'anuhart gladiator set', 'anuhart chanter set', 'anuhart cleric set', 'anuhart sorcerer set', 'anuhart spiritmaster set'])
-})
+router.get('/sets/:setName/name', controllers.sets.searchByName);
 
 router.post('/sets', controllers.sets.createSet)
 
