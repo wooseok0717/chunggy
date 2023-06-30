@@ -33,4 +33,10 @@ module.exports ={
       res.send('error');
     })
   },
+  verifyName: (req, res) => {
+    axios.get(`${baseURL}/items/sets/verify`, {params: {nameInput: req.query.nameInput}})
+    .then(data => {
+      res.send(data.data)
+    })
+  }
 }

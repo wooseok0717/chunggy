@@ -4,6 +4,7 @@ import axios from 'axios';
 
 export default function AddSet ({setAddSet}) {
 
+  const [nameInput, setNameInput] = useState();
   const [name, setName] = useState();
   const [stageOne, setStageOne] = useState({});
   const [stageTwo, setStageTwo] = useState({});
@@ -24,6 +25,18 @@ export default function AddSet ({setAddSet}) {
     })
   }
 
+  const handleVerification = () => {
+    axios.get(`/api/sets/verify`, {params: {nameInput: nameInput}})
+    .then(res => {
+      console.log(res)
+      if (res) {
+        setName(nameInput);
+      } else {
+        setName('')
+      }
+    })
+  }
+
   return (
     <div className='modal'>
       <div className='modal-content'>
@@ -34,7 +47,8 @@ export default function AddSet ({setAddSet}) {
         </div>
         <div className='modal-body'>
           <div>
-            Name of the set:<input onChange={e => setName(e.target.value)}/>
+            Name of the set:<input onChange={e => setNameInput(e.target.value)}/>
+            <button onClick={handleVerification}>verify</button>
           </div>
           <div>
             Pieces required for first stage effect<input onChange={e => setStageOneReq(e.target.value)} />
