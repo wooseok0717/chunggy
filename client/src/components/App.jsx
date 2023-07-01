@@ -29,6 +29,12 @@ export default function App () {
   },[userData]);
 
   useEffect(() => {
+    if (!fillOut) {
+      getUser(localStorage.email);
+    }
+  },[fillOut])
+
+  useEffect(() => {
     if (localStorage.email !== undefined) {
       if (userData === undefined) {
         getUser(localStorage.email);
@@ -38,7 +44,7 @@ export default function App () {
 
   return (
     <>
-      {fillOut && (<UserInfo />)}
+      {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut}/>)}
       <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
       <Header/>
       {/* <Search/> */}

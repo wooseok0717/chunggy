@@ -20,4 +20,6 @@ router.post('/sets', controllers.sets.createSet);
 
 router.get('/user', controllers.users.getUser);
 
+router.post('/user', controllers.users.createAUser);
+
 module.exports = router;

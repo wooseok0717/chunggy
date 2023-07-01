@@ -1,13 +1,20 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
-export default function UserInfo () {
+export default function UserInfo ({currentUser, setFillOut}) {
 
-  const [ign, setIgn] = useState();
-  const [job, setJob] = useState();
+  const [ign, setIgn] = useState('');
+  const [job, setJob] = useState('');
 
   const handleSubmit = () => {
-    console.log(ign, job);
+    if (ign.length <= 3) {
+      alert('ign has to be longer than 3 letters');
+    } else if (job === '') {
+      alert('select a class');
+    } else {
+      axios.post(`/api/user`, {ign,job,currentUser})
+      .then(() => {setFillOut(false)})
+    }
   }
 
   return (
@@ -17,7 +24,7 @@ export default function UserInfo () {
           <h4 className='modal-title'>Create user info</h4>
         </div>
         <div className='modal-body'>
-          In game name: <input onChange={e => setIgn(e.target.value)}/>
+          In game name: <input onChange={e => setIgn(e.target.value.toLowerCase())}/>
           Class:
           <select onChange={e => setJob(e.target.value)}>
             <option value="" disabled selected>Select a class</option>
