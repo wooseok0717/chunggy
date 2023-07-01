@@ -16,6 +16,8 @@ router.get('/sets/:setName/name', controllers.sets.searchByName);
 
 router.get('/sets/verify', controllers.sets.verifyName);
 
-router.post('/sets', controllers.sets.createSet)
+router.post('/sets', controllers.sets.createSet);
+
+router.get('/user', controllers.users.getUser);
 
 module.exports = router;

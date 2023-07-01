@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {auth, provider} from './googleSignin/config.js'
+import {auth, provider} from '../googleSignin/config.js'
 import {signInWithPopup} from 'firebase/auth';
 
-export default function SignIn({SetCurrentUser}) {
+export default function SignIn({SetCurrentUser, getUser}) {
 
   const [value, setValue] = useState('');
   const handleClick = function () {
@@ -11,6 +11,7 @@ export default function SignIn({SetCurrentUser}) {
     .then(data => {
       localStorage.setItem('email', data.user.email);
       SetCurrentUser(data.user.email);
+      getUser(data.user.email);
     })
   }
 
