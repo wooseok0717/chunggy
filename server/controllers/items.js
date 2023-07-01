@@ -46,11 +46,16 @@ module.exports ={
       res.sendStatus(404);
     })
   },
-  verifyByNumber: ((req, res) => {
-    console.log(req.query.number);
+  verifyByNumber: (req, res) => {
     axios.get(`${baseURL}/items/verify/number`, {params: {number: req.query.number}})
     .then(data => {
       res.send(data.data)
     })
-  })
+  },
+  verifyByName: (req, res) => {
+    axios.get(`${baseURL}/items/verify/name`, {params: {name: req.query.name}})
+    .then(data => {
+      res.send(data.data)
+    })
+  }
 }

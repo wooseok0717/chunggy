@@ -4,13 +4,13 @@ import axios from 'axios';
 export default function ItemNumber ({setItemName}) {
   const [itemInput, setItemInput] = useState();
 
-  const handleIdSubmit = () => {
-    axios.get(`api/items/${itemInput}/Name`)
+  const handleVerification = () => {
+    axios.get('/api/items/verify/name', {params: {name: itemInput}})
     .then(res => {
-      console.log(res)
+      console.log('name verified',res);
     })
     .catch(res => {
-      setItemName(itemInput);
+      console.log('name not verified',res);
     })
   }
 
@@ -25,7 +25,7 @@ export default function ItemNumber ({setItemName}) {
       <button
         type='button'
         className='itemNameVerify'
-        onClick={handleIdSubmit}
+        onClick={handleVerification}
       >
         Verify
       </button>
