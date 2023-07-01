@@ -3,15 +3,14 @@ import axios from 'axios';
 
 export default function ItemNumber ({setItemNumber}) {
   const [idInput, setIdInput] = useState();
-  const handleIdSubmit = () => {
-    axios.get(`api/items/${idInput}/Id`)
+
+  const handleVerification = () => {
+    axios.get('/api/items/verify/number', {params: {number: idInput}})
     .then(res => {
-      console.log('already exists');
-      setItemNumber(undefined);
+      console.log('number verified',res);
     })
     .catch(res => {
-      // future enhancement : modal to show that it is valid id
-      setItemNumber(idInput);
+      console.log('number not verified',res);
     })
   }
   return (
@@ -25,7 +24,7 @@ export default function ItemNumber ({setItemNumber}) {
       <button
         type='button'
         className='itemNumberVerify'
-        onClick={handleIdSubmit}
+        onClick={handleVerification}
       >
         Verify
       </button>

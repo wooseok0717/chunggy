@@ -26,7 +26,7 @@ export default function AddSet ({setAddSet}) {
   }
 
   const handleVerification = () => {
-    axios.get(`/api/sets/verify`, {params: {nameInput: nameInput}})
+    axios.get('/api/sets/verify', {params: {nameInput: nameInput}})
     .then(res => {
       console.log(res)
       if (res) {
