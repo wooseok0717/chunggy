@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import SignOut from './SignOut.jsx';
 
-export default function UserInfo ({currentUser, setFillOut}) {
+export default function UserInfo ({currentUser, setFillOut, SetCurrentUser}) {
 
   const [ign, setIgn] = useState('');
   const [job, setJob] = useState('');
@@ -41,6 +42,7 @@ export default function UserInfo ({currentUser, setFillOut}) {
         </div>
         <div className='modal-footer'>
           <button onClick={handleSubmit}>Submit</button>
+          <SignOut SetCurrentUser={SetCurrentUser}/>
         </div>
       </div>
     </div>

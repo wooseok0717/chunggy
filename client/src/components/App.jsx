@@ -26,7 +26,7 @@ export default function App () {
         setFillOut(true);
       }
     }
-  },[userData]);
+  },[userData, currentUser]);
 
   useEffect(() => {
     if (!fillOut) {
@@ -44,10 +44,9 @@ export default function App () {
 
   return (
     <>
-      {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut}/>)}
+      {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut} SetCurrentUser={SetCurrentUser}/>)}
       <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
       <Header/>
-      {/* <Search/> */}
       <button onClick={()=>console.log(userData)}>click</button>
       <Add currentUser={currentUser} />
     </>
