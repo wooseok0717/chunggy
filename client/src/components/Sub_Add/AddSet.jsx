@@ -26,13 +26,12 @@ export default function AddSet ({setAddSet}) {
   }
 
   const handleVerification = () => {
-    axios.get('/api/sets/verify', {params: {nameInput: nameInput}})
+    axios.get(`/api/sets/verify?nameInput=${nameInput}`)
     .then(res => {
-      console.log(res)
-      if (res) {
-        setName(nameInput);
+      if (typeof res.data === 'object') {
+        alert(`the set with the name ${nameInput} exists`)
       } else {
-        setName('')
+        setName(nameInput);
       }
     })
   }
@@ -47,7 +46,7 @@ export default function AddSet ({setAddSet}) {
         </div>
         <div className='modal-body'>
           <div>
-            Name of the set:<input onChange={e => setNameInput(e.target.value)}/>
+            Name of the set:<input onChange={e => setNameInput(e.target.value.toLowerCase())}/>
             <button onClick={handleVerification}>verify</button>
           </div>
           <div>
