@@ -14,9 +14,6 @@ export default function ItemNumber ({setItemNumber}) {
         setItemNumber(idInput);
       }
     })
-    .catch(res => {
-      console.log('number not verified',res);
-    })
   }
   return (
     <div className='itemNumber'>

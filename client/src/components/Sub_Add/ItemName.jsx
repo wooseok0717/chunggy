@@ -5,12 +5,14 @@ export default function ItemNumber ({setItemName}) {
   const [itemInput, setItemInput] = useState();
 
   const handleVerification = () => {
-    axios.get('/api/items/verify/name', {params: {name: itemInput}})
+    axios.get(`/api/items/verify/name?name=${itemInput}`)
     .then(res => {
-      console.log('name verified',res);
-    })
-    .catch(res => {
-      console.log('name not verified',res);
+      if (res.data.item_name) {
+        alert('this item name already exists in the db');
+      } else {
+        alert('this item name is not in the db and good to use');
+        setItemName(itemInput);
+      }
     })
   }
 
