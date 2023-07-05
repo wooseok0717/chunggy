@@ -47,7 +47,6 @@ export default function App () {
       {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut}/>)}
       <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
       <Header/>
-      <button onClick={()=>console.log(userData)}>click</button>
       <Add currentUser={currentUser} />
     </>
   )

@@ -67,6 +67,18 @@ const stats = {
   sets: [
     'accuracy', 'attack', 'attack speed', 'block', 'casting speed', 'concentration', 'crit spell', 'crit strike', 'damage reduction', 'defense', 'earth resist', 'enmity boost', 'evasion', 'fire resist', 'flight speed', 'flight time', 'healing boost', 'magic boost', 'magic resist', 'magic suppr', 'magical accuracy', 'magical attack', 'max hp', 'max mp', 'paralysis penetration', 'paralysis resist', 'parry', 'pvp attack', 'pvp defense', 'silence penetration', 'silence res', 'silence resist', 'silenece penetration', 'speed', 'spell fortitude', 'spell resist', 'strike fortitude', 'strike resist', 'water resist', 'wind resist'
   ],
+  weapons: {
+    bow: 'base attack',
+    chainsword: 'base attack',
+    dagger: 'base attack',
+    greatsword: 'base attack',
+    mace: 'base attack',
+    orb: 'base magical attack',
+    polearm: 'base attack',
+    spellbook: 'base magical attack',
+    staff: 'base magical attack',
+    sword: 'base attack',
+  }
 }
 
 export default stats;

@@ -1,10 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ValidStatsModal from './ValidStatsModal.jsx';
 import StatsForm from './StatsForm.jsx'
+import stats from '../validStats';
 
 export default function StatListEntry ({prompt, part ,type, list, setList}) {
   const [clicked, setClicked] = useState(false);
   const [listStats, setListStats] = useState([]);
+  useEffect(() => {
+    if (prompt === 'Line One Stats:') {
+      if (part === 'weapon') {
+        setListStats([stats.weapons[type]]);
+      }
+    }
+  }, [part, type])
 
   return (
     <div>

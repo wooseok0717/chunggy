@@ -34,7 +34,7 @@ export default function SetModal({setSetItem, setClicked}) {
           <input onChange={handleChange}/>
           <div className='currentList'>
           {filteredSet.map(setEntry => {
-            return (<button onClick={()=>{handleClick(setEntry.name)}}>{setEntry.name}</button>)
+            return (<button onClick={()=>{handleClick(setEntry.id)}}>{setEntry.name}</button>)
           })}
           </div>
         </div>
