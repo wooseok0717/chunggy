@@ -56,7 +56,7 @@ const stats = {
     'parry', 'silence resist', 'speed', 'spell resist', 'strike resist'
   ],
   weapon: [
-    'accuracy', 'attack speed', 'attack', 'casting speed', 'crit spell', 'crit strike', 'evasion',
+    'accuracy', 'attack speed', 'attack', 'base attack', 'base magical attack', 'casting speed', 'crit spell', 'crit strike', 'evasion',
     'healing boost', 'magic boost', 'magical accuracy', 'magical attack', 'max hp', 'max mp',
     'pvp attack', 'paralysis penetration', 'parry', 'silence penetration'
   ],
