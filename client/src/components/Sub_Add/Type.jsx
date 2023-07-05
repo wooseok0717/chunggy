@@ -17,6 +17,7 @@ export default function Type ( {part, setType, setMaterial} ) {
   return (
     <div className='type'>
       <select onChange={e => {setType(e.target.value)}}>
+        <option value=''selected disabled hidden>choose type</option>
         {validTypes[part].map((x) => {
           return (
             <option value={x}>{x}</option>
@@ -25,7 +26,7 @@ export default function Type ( {part, setType, setMaterial} ) {
       </select>
       {part === 'armor' && (
         <select onChange={e => {setMaterial(e.target.value)}}>
-          <option value=''selected disabled hidden>choose a type</option>
+          <option value=''selected disabled hidden>choose a material</option>
           <option value='chain'>chain</option>
           <option value='cloth'>cloth</option>
           <option value='leather'>leather</option>

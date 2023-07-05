@@ -5,6 +5,7 @@ export default function Korean ({setKorean}) {
   return (
 
     <div className='korean'>
+      Korean Name:
       <input
         type='text'
         placeholder='korean name'

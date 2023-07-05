@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import AddSet from './AddSet.jsx';
 
-export default function SetModal({setSetItem, setClicked}) {
+export default function SetModal({setSetItem, setClicked, setSetName}) {
 
   const [filteredSet, setFilteredSet] = useState([]);
   const [addSet, setAddSet] = useState(false);
@@ -15,10 +15,12 @@ export default function SetModal({setSetItem, setClicked}) {
       setFilteredSet([]);
     }
   }
-  const handleClick = (val) => {
-    setSetItem(val);
+  const handleClick = (set) => {
+    setSetItem(set.id);
     setClicked(false);
+    setSetName(set.name);
   }
+
   return (
     <div className='modal'>
       <div className='modal-content'>
@@ -34,7 +36,7 @@ export default function SetModal({setSetItem, setClicked}) {
           <input onChange={handleChange}/>
           <div className='currentList'>
           {filteredSet.map(setEntry => {
-            return (<button onClick={()=>{handleClick(setEntry.id)}}>{setEntry.name}</button>)
+            return (<button onClick={()=>{handleClick(setEntry)}}>{setEntry.name}</button>)
           })}
           </div>
         </div>

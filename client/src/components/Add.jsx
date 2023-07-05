@@ -49,9 +49,7 @@ export default function Add ({currentUser}) {
       maxEnchant, setItem, currentUser, abyss, korean
     }
     console.log(config);
-    axios.post('/api/items', {
-      itemNumber, itemName, part, type, grade, level
-    })
+    axios.post('/api/items', config);
   }
 
   return (

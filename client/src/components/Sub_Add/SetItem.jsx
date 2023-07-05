@@ -5,6 +5,7 @@ export default function SetItem({setSetItem}) {
 
   const [clicked, setClicked] = useState(false);
   const [isSet, setIsSet] = useState(false);
+  const [setName, setSetName] = useState();
 
   return (
     <div className='setContainer'>
@@ -19,8 +20,9 @@ export default function SetItem({setSetItem}) {
         <input type='radio' value='yes' name='setItem' /><span>Yes</span>
         <input type='radio' value='no' name='setItem' /><span>No</span>
       </form>
+      {setName && (<>{setName}</>)}
       {isSet && (<button onClick={() => {setClicked(true)}} >add a set</button>)}
-      {clicked && (<SetModal setSetItem={setSetItem} setClicked={setClicked}/>)}
+      {clicked && (<SetModal setSetName ={setSetName} setSetItem={setSetItem} setClicked={setClicked}/>)}
     </div>
   )
 }
