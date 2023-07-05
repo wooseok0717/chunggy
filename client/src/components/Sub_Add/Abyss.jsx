@@ -53,6 +53,7 @@ export default function Abyss ({abyss, setAbyss}) {
         {needMedals && (
           <>
             <select onChange={selectMedal}>
+              <option value=''selected disabled hidden>choose a type of medal</option>
               <option value='platinum'>platinum</option>
               <option value='sapphire'>sapphire</option>
               <option value='gold'>gold</option>

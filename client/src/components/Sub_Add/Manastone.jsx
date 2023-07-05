@@ -15,6 +15,11 @@ export default function Manastone({manastone, setManastone}) {
         temp.max = e.target.value
         setManastone(temp)
       }} />
+      Manastone Level Maximum: <input onChange={e => {
+        const temp = manastone;
+        temp.level = e.target.value;
+        setManastone(temp)
+      }}/>
     </div>
   )
 }
