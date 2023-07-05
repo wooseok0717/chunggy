@@ -12,6 +12,7 @@ import Enchant from './Sub_Add/Enchant.jsx';
 import SetItem from './Sub_Add/SetItem.jsx';
 import Abyss from './Sub_Add/Abyss.jsx';
 import Conditioning from './Sub_Add/Conditioning.jsx';
+import Korean from './Sub_Add/Korean.jsx';
 
 export default function Add ({currentUser}) {
   const [itemNumber, setItemNumber] = useState();
@@ -28,6 +29,8 @@ export default function Add ({currentUser}) {
   const [manastone, setManastone] = useState({});
   const [maxEnchant, setMaxEnchant] = useState();
   const [setItem, setSetItem] = useState();
+  const [abyss, setAbyss] = useState({});
+  const [korean, setKorean] = useState();
 
   useEffect(() => {
     if (part !== 'armor') {
@@ -43,7 +46,7 @@ export default function Add ({currentUser}) {
     const config = {
       itemNumber, itemName, part, type, material, grade, level,
       lineOne, lineTwo, conditionOne, conditionTwo, manastone,
-      maxEnchant, setItem, currentUser
+      maxEnchant, setItem, currentUser, abyss, korean
     }
     console.log(config);
     axios.post('/api/items', {
@@ -70,7 +73,7 @@ export default function Add ({currentUser}) {
       <Manastone setManastone={setManastone} manastone={manastone} />
       <Enchant setMaxEnchant={setMaxEnchant} />
       <SetItem setSetItem={setSetItem} />
-      <Abyss />
+      <Abyss abyss={abyss} setAbyss={setAbyss} />
       <Conditioning
         part={part}
         type={type}
@@ -79,6 +82,7 @@ export default function Add ({currentUser}) {
         setConditionOne={setConditionOne}
         setConditionTwo={setConditionTwo}
       />
+      <Korean setKorean={setKorean}/>
       <button onClick={handleSubmit}>Add</button>
       <button>Cancel</button>
     </div>
