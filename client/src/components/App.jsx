@@ -49,7 +49,7 @@ export default function App () {
       <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
       <Header/>
       {/* <Add currentUser={currentUser} /> */}
-      <Database />
+      <Database currentUser={currentUser}/>
     </>
   )
 }

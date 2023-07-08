@@ -1,8 +1,9 @@
 import React, {useState ,useEffect} from 'react';
 import axios from 'axios';
 import ItemList from './Sub_Database/ItemList.jsx'
+import Add from './Add.jsx'
 
-export default function Database () {
+export default function Database ({currentUser}) {
 
   const [part, setPart] = useState();
   const [type, setType] = useState();
@@ -10,6 +11,7 @@ export default function Database () {
   const [input, setInput] = useState('');
   const [currentFilter, setCurrentFilter] = useState('accuracy');
   const [currentList, setCurrentList] = useState([]);
+  const [addItem, setAddItem] = useState(false);
 
   const validTypes = {
     weapon : ['bow', 'chainsword', 'dagger', 'greatsword', 'mace', 'orb', 'polearm', 'spellbook', 'staff', 'sword'],
@@ -49,6 +51,10 @@ export default function Database () {
 
   return (
     <div>
+      <div>
+        <button onClick={() => setAddItem(true)}>Add a new item</button>
+      </div>
+      {addItem && <Add currentUser={currentUser} setAddItem={setAddItem} />}
       Part:
       <select onChange={e => setPart(e.target.value)}>
         <option value=''selected disabled hidden>choose part</option>

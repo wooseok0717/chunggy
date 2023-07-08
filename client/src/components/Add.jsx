@@ -14,7 +14,7 @@ import Abyss from './Sub_Add/Abyss.jsx';
 import Conditioning from './Sub_Add/Conditioning.jsx';
 import Korean from './Sub_Add/Korean.jsx';
 
-export default function Add ({currentUser}) {
+export default function Add ({currentUser, setAddItem}) {
   const [itemNumber, setItemNumber] = useState();
   const [itemName, setItemName] = useState();
   const [part, setPart] = useState();
@@ -49,40 +49,53 @@ export default function Add ({currentUser}) {
       maxEnchant, setItem, currentUser, abyss, korean
     }
     console.log(config);
-    axios.post('/api/items', config);
+    axios.post('/api/items', config)
+    .then(setAddItem(false));
   }
 
   return (
-    <div className='Add'>
-      <ItemNumber setItemNumber={setItemNumber} />
-      <ItemName setItemName={setItemName}/>
-      <Part setPart={setPart} />
-      <Type part={part} setType={setType} setMaterial={setMaterial} />
-      <Grade setGrade={setGrade}/>
-      <Level setLevel={setLevel}/>
-      <Stats
-        part={part}
-        type={type}
-        lineOne={lineOne}
-        setLineOne={setLineOne}
-        lineTwo={lineTwo}
-        setLineTwo={setLineTwo}
-      />
-      <Manastone setManastone={setManastone} manastone={manastone} />
-      <Enchant setMaxEnchant={setMaxEnchant} />
-      <SetItem setSetItem={setSetItem} />
-      <Abyss abyss={abyss} setAbyss={setAbyss} />
-      <Conditioning
-        part={part}
-        type={type}
-        conditionOne={conditionOne}
-        conditionTwo={conditionTwo}
-        setConditionOne={setConditionOne}
-        setConditionTwo={setConditionTwo}
-      />
-      <Korean setKorean={setKorean}/>
-      <button onClick={handleSubmit}>Add</button>
-      <button>Cancel</button>
+    <div className='modal'>
+      <div className='modal-content'>
+        <div className="modal-header">
+          <h4 className='modal-title'>Search Set</h4>
+        </div>
+        <div className='modal-body'>
+          <div className='Add'>
+            <ItemNumber setItemNumber={setItemNumber} />
+            <ItemName setItemName={setItemName}/>
+            <Part setPart={setPart} />
+            <Type part={part} setType={setType} setMaterial={setMaterial} />
+            <Grade setGrade={setGrade}/>
+            <Level setLevel={setLevel}/>
+            <Stats
+              part={part}
+              type={type}
+              lineOne={lineOne}
+              setLineOne={setLineOne}
+              lineTwo={lineTwo}
+              setLineTwo={setLineTwo}
+            />
+            <Manastone setManastone={setManastone} manastone={manastone} />
+            <Enchant setMaxEnchant={setMaxEnchant} />
+            <SetItem setSetItem={setSetItem} />
+            <Abyss abyss={abyss} setAbyss={setAbyss} />
+            <Conditioning
+              part={part}
+              type={type}
+              conditionOne={conditionOne}
+              conditionTwo={conditionTwo}
+              setConditionOne={setConditionOne}
+              setConditionTwo={setConditionTwo}
+            />
+            <Korean setKorean={setKorean}/>
+
+          </div>
+        </div>
+        <div className='modal-footer'>
+          <button onClick={handleSubmit}>Add</button>
+          <button onClick={() => setAddItem(false)}>Cancel</button>
+        </div>
+      </div>
     </div>
   )
 }
