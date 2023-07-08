@@ -28,8 +28,14 @@ export default function Database () {
   },[part,type,grade,input])
 
   const handleSearch = () => {
+    let grades = [];
+    for (let key in grade) {
+      if (grade[key]) {
+        grades.push(key);
+      }
+    }
     const data = {
-      part, type, grade, input
+      part, type, grades, input
     }
     axios.get('/api/items', {params: data});
   }
