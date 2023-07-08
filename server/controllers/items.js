@@ -32,7 +32,6 @@ module.exports ={
     })
   },
   getItems: (req, res) => {
-    console.log(req.query);
     axios.get(`${baseURL}/items`, {params: req.query})
     res.send('hello');
   },

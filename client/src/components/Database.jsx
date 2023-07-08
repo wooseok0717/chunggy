@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState ,useEffect} from 'react';
 import axios from 'axios';
 
 export default function Database () {
 
   const [part, setPart] = useState();
   const [type, setType] = useState();
-  const [grade, setGrade] = useState({common: true, superior: true, heroic: true, fabled: true, eternal: true})
+  const [grade, setGrade] = useState({common: true, superior: true, heroic: true, fabled: true, eternal: true});
+  const [input, setInput] = useState('');
 
   const validTypes = {
     weapon : ['bow', 'chainsword', 'dagger', 'greatsword', 'mace', 'orb', 'polearm', 'spellbook', 'staff', 'sword'],
@@ -20,17 +21,17 @@ export default function Database () {
     setGrade(temp);
   }
 
-  const handleSearch = e => {
-    if (part === undefined) {
-      alert('please select part');
-    } else if (type === undefined) {
-      alert('please select type');
-    } else {
-      const data = {
-        part, type, grade, input: e.target.value
-      }
-      axios.get('/api/items', {params: data});
+  useEffect(() => {
+    if (part !== undefined && type !== undefined) {
+      handleSearch();
     }
+  },[part,type,grade,input])
+
+  const handleSearch = () => {
+    const data = {
+      part, type, grade, input
+    }
+    axios.get('/api/items', {params: data});
   }
 
   return (
@@ -63,8 +64,10 @@ export default function Database () {
       <input type='checkbox' onChange={() => handleGrade('eternal')} defaultChecked/><span>eternal</span>
       <div>
         Search:
-        <input onChange={handleSearch}/>
+        <input onChange={e => (setInput(e.target.value.toLowerCase()))}/>
       </div>
+      {!type && (<>please select type</>)}
+      {!part && (<>please select part</>)}
       <button onClick={() => console.log(part, type, grade)}>Check states</button>
     </div>
   )
