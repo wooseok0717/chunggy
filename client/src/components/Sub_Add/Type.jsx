@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export default function Type ( {part, setType, setMaterial} ) {
   const validTypes = {
@@ -8,9 +8,6 @@ export default function Type ( {part, setType, setMaterial} ) {
     shield : ['shield']
   }
 
-  useEffect(() => {
-
-  },[part])
   if (part === undefined || part === 'shield') {
     return (<></>)
   }

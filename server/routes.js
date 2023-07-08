@@ -4,6 +4,8 @@ const controllers = require('./controllers');
 
 router.post('/items', controllers.items.createItem);
 
+router.get('/items', controllers.items.getItems)
+
 router.get('/items/verify/number', controllers.items.verifyByNumber);
 
 router.get('/items/verify/name', controllers.items.verifyByName);

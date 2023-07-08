@@ -31,6 +31,11 @@ module.exports ={
       res.send('item doesnt exist!')
     })
   },
+  getItems: (req, res) => {
+    console.log(req.query);
+    axios.get(`${baseURL}/items`, {params: req.query})
+    res.send('hello');
+  },
   createItem: (req, res) => {
     const config = {
       method:'post',

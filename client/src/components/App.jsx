@@ -4,6 +4,7 @@ import Search from './Search.jsx';
 import Add from './Add.jsx';
 import Authorize from './Sub_User/Authorize.jsx';
 import UserInfo from './Sub_User/UserInfo.jsx';
+import Database from './Database.jsx';
 import axios from 'axios';
 
 export default function App () {
@@ -47,7 +48,8 @@ export default function App () {
       {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut}/>)}
       <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
       <Header/>
-      <Add currentUser={currentUser} />
+      {/* <Add currentUser={currentUser} /> */}
+      <Database />
     </>
   )
 }
