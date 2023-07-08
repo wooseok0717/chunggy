@@ -1,5 +1,6 @@
 import React, {useState ,useEffect} from 'react';
 import axios from 'axios';
+import ItemList from './Sub_Database/ItemList.jsx'
 
 export default function Database () {
 
@@ -7,6 +8,8 @@ export default function Database () {
   const [type, setType] = useState();
   const [grade, setGrade] = useState({common: true, superior: true, heroic: true, fabled: true, eternal: true});
   const [input, setInput] = useState('');
+  const [currentFilter, setCurrentFilter] = useState('accuracy');
+  const [currentList, setCurrentList] = useState([]);
 
   const validTypes = {
     weapon : ['bow', 'chainsword', 'dagger', 'greatsword', 'mace', 'orb', 'polearm', 'spellbook', 'staff', 'sword'],
@@ -25,7 +28,7 @@ export default function Database () {
     if (part !== undefined && type !== undefined) {
       handleSearch();
     }
-  },[part,type,grade,input])
+  },[part,type,grade,input,currentFilter])
 
   const handleSearch = () => {
     let grades = [];
@@ -35,9 +38,13 @@ export default function Database () {
       }
     }
     const data = {
-      part, type, grades, input
+      part, type, grades, input, currentFilter
     }
-    axios.get('/api/items', {params: data});
+    axios.get('/api/items', {params: data})
+    .then(res => setCurrentList(res.data))
+    .catch(() => {
+      console.log('broke!')
+    });
   }
 
   return (
@@ -75,6 +82,7 @@ export default function Database () {
       {!type && (<>please select type</>)}
       {!part && (<>please select part</>)}
       <button onClick={() => console.log(part, type, grade)}>Check states</button>
+      <ItemList currentList={currentList} currentFilter={currentFilter} setCurrentFilter={setCurrentFilter}/>
     </div>
   )
 }

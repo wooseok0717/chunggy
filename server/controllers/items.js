@@ -33,7 +33,7 @@ module.exports ={
   },
   getItems: (req, res) => {
     axios.get(`${baseURL}/items`, {params: req.query})
-    res.send('hello');
+    .then(rows => res.send(rows.data));
   },
   createItem: (req, res) => {
     const config = {
