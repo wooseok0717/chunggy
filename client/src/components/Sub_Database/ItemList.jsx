@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import validStats from '../validStats';
 
-export default function ItemList ({ currentList, currentFilter, setCurrentFilter }) {
+export default function ItemList ({ currentList, currentFilter, setCurrentFilter, setCurrentItem }) {
 
   return (
     <div>
@@ -23,7 +23,7 @@ export default function ItemList ({ currentList, currentFilter, setCurrentFilter
             }
             return (
               <tr>
-                <td>{item.item_name}</td>
+                <td onClick={() => setCurrentItem(item)}>{item.item_name}</td>
                 <td>{item.total_stats[currentFilter]}</td>
               </tr>
           )})}

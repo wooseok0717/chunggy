@@ -5,6 +5,7 @@ import Add from './Add.jsx';
 import Authorize from './Sub_User/Authorize.jsx';
 import UserInfo from './Sub_User/UserInfo.jsx';
 import Database from './Database.jsx';
+import ItemDetails from './Sub_Database/ItemDetails.jsx';
 import Home from './Home.jsx';
 import axios from 'axios';
 
@@ -14,6 +15,13 @@ export default function App () {
   const [userData, setUserData] = useState();
   const [fillOut, setFillOut] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
+  const [currentItem, setCurrentItem] = useState();
+
+  useEffect(() => {
+    if (currentItem) {
+      setCurrentPage('itemdetails');
+    }
+  },[currentItem])
 
   const getUser = (email) => {
     axios.get(`/api/user?email=${email}`)
@@ -52,8 +60,8 @@ export default function App () {
       <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
       <Header setCurrentPage={setCurrentPage} />
       {currentPage === 'home' ? (<Home />):
-      currentPage === 'database' ? (<Database currentUser={currentUser}/>) :
-      (<></>)}
+      currentPage === 'database' ? (<Database currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails currentItem={currentItem}/>) : (<></>)
+      }
     </>
   )
 }

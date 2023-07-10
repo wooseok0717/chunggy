@@ -3,7 +3,7 @@ import axios from 'axios';
 import ItemList from './Sub_Database/ItemList.jsx'
 import Add from './Add.jsx'
 
-export default function Database ({currentUser}) {
+export default function Database ({currentUser, setCurrentItem}) {
 
   const [part, setPart] = useState();
   const [type, setType] = useState();
@@ -88,7 +88,7 @@ export default function Database ({currentUser}) {
       {!type && (<>please select type</>)}
       {!part && (<>please select part</>)}
       <button onClick={() => console.log(part, type, grade)}>Check states</button>
-      <ItemList currentList={currentList} currentFilter={currentFilter} setCurrentFilter={setCurrentFilter}/>
+      <ItemList currentList={currentList} currentFilter={currentFilter} setCurrentFilter={setCurrentFilter} setCurrentItem={setCurrentItem}/>
     </div>
   )
 }
