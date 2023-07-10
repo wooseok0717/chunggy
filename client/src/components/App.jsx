@@ -5,6 +5,7 @@ import Add from './Add.jsx';
 import Authorize from './Sub_User/Authorize.jsx';
 import UserInfo from './Sub_User/UserInfo.jsx';
 import Database from './Database.jsx';
+import Home from './Home.jsx';
 import axios from 'axios';
 
 export default function App () {
@@ -46,6 +47,7 @@ export default function App () {
   return (
     <>
       {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut}/>)}
+      <Home />
       <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
       <Header/>
       {/* <Add currentUser={currentUser} /> */}

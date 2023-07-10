@@ -57,7 +57,7 @@ export default function Add ({currentUser, setAddItem}) {
     <div className='modal'>
       <div className='modal-content'>
         <div className="modal-header">
-          <h4 className='modal-title'>Search Set</h4>
+          <h4 className='modal-title'>Create new item</h4>
         </div>
         <div className='modal-body'>
           <div className='Add'>
