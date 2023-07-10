@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar.jsx';
 
-export default function Header () {
+export default function Header ({setCurrentPage}) {
 
   return (
     <div className='header'>
@@ -13,7 +13,7 @@ export default function Header () {
           onClick={()=>{console.log('hello')}}
         />
       </div>
-      <NavBar/>
+      <NavBar setCurrentPage={setCurrentPage} />
     </div>
   )
 }

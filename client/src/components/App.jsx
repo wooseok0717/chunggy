@@ -13,6 +13,7 @@ export default function App () {
   const [currentUser, SetCurrentUser] = useState(localStorage.email);
   const [userData, setUserData] = useState();
   const [fillOut, setFillOut] = useState(false);
+  const [currentPage, setCurrentPage] = useState('home');
 
   const getUser = (email) => {
     axios.get(`/api/user?email=${email}`)
@@ -44,14 +45,15 @@ export default function App () {
     }
   },[]);
 
+
   return (
     <>
       {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut}/>)}
-      <Home />
       <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
-      <Header/>
-      {/* <Add currentUser={currentUser} /> */}
-      <Database currentUser={currentUser}/>
+      <Header setCurrentPage={setCurrentPage} />
+      {currentPage === 'home' ? (<Home />):
+      currentPage === 'database' ? (<Database currentUser={currentUser}/>) :
+      (<></>)}
     </>
   )
 }
