@@ -60,7 +60,7 @@ export default function App () {
       <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
       <Header setCurrentPage={setCurrentPage} />
       {currentPage === 'home' ? (<Home />):
-      currentPage === 'database' ? (<Database currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails currentItem={currentItem}/>) : (<></>)
+      currentPage === 'database' ? (<Database currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails item={currentItem}/>) : (<></>)
       }
     </>
   )
