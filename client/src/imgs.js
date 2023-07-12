@@ -52,6 +52,32 @@ import heroicsword from '../assets/weapons/heroicsword.png'
 import superiorsword from '../assets/weapons/superiorsword.png'
 import commonsword from '../assets/weapons/commonsword.png'
 
+import eternalboots from '../assets/armors/shoes/eternalboots.png'
+import fabledboots from '../assets/armors/shoes/fabledboots.png'
+import heroicboots from '../assets/armors/shoes/heroicboots.png'
+import superiorboots from '../assets/armors/shoes/superiorboots.png'
+import commonboots from '../assets/armors/shoes/commonboots.png'
+
+import eternalshoes from '../assets/armors/shoes/eternalshoes.png'
+import fabledshoes from '../assets/armors/shoes/fabledshoes.png'
+import heroicshoes from '../assets/armors/shoes/heroicshoes.png'
+import superiorshoes from '../assets/armors/shoes/superiorshoes.png'
+import commonshoes from '../assets/armors/shoes/commonshoes.png'
+
+import eternalbrogans from '../assets/armors/shoes/eternalbrogans.png'
+import fabledbrogans from '../assets/armors/shoes/fabledbrogans.png'
+import heroicbrogans from '../assets/armors/shoes/heroicbrogans.png'
+import superiorbrogans from '../assets/armors/shoes/superiorbrogans.png'
+import commonbrogans from '../assets/armors/shoes/commonbrogans.png'
+
+import eternalsabatons from '../assets/armors/shoes/eternalsabatons.png'
+import fabledsabatons from '../assets/armors/shoes/fabledsabatons.png'
+import heroicsabatons from '../assets/armors/shoes/heroicsabatons.png'
+import superiorsabatons from '../assets/armors/shoes/superiorsabatons.png'
+import commonsabatons from '../assets/armors/shoes/commonsabatons.png'
+
+
+
 const images = {
   eternal: {
     bow: eternalbow,
@@ -62,6 +88,12 @@ const images = {
     polearm: eternalpolearm,
     spellbook: eternalspellbook,
     sword: eternalsword,
+    shoes: {
+      leather: eternalboots,
+      cloth: eternalshoes,
+      chain: eternalbrogans,
+      plate: eternalsabatons
+    }
   },
   fabled: {
     bow: fabledbow,
@@ -72,6 +104,12 @@ const images = {
     polearm: fabledpolearm,
     spellbook: fabledspellbook,
     sword: fabledsword,
+    shoes: {
+      leather: fabledboots,
+      cloth: fabledshoes,
+      chain: fabledbrogans,
+      plate: fabledsabatons
+    }
   },
   heroic: {
     bow: heroicbow,
@@ -82,6 +120,12 @@ const images = {
     polearm: heroicpolearm,
     spellbook: heroicspellbook,
     sword: heroicsword,
+    shoes: {
+      leather: heroicboots,
+      cloth: heroicshoes,
+      chain: heroicbrogans,
+      plate: heroicsabatons
+    }
   },
   superior: {
     bow: superiorbow,
@@ -92,6 +136,12 @@ const images = {
     polearm: superiorpolearm,
     spellbook: superiorspellbook,
     sword: superiorsword,
+    shoes: {
+      leather: superiorboots,
+      cloth: superiorshoes,
+      chain: superiorbrogans,
+      plate: superiorsabatons
+    }
   },
   common: {
     bow: commonbow,
@@ -102,6 +152,12 @@ const images = {
     polearm: commonpolearm,
     spellbook: commonspellbook,
     sword: commonsword,
+    shoes: {
+      leather: commonboots,
+      cloth: commonshoes,
+      chain: commonbrogans,
+      plate: commonsabatons
+    }
   },
 }
 

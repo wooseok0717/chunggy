@@ -25,7 +25,11 @@ export default function ItemList ({ currentList, currentFilter, setCurrentFilter
             }
             return (
               <tr>
-                <td onClick={() => setCurrentItem(item)}><img src={images[item.grade][item.type]}/>{item.item_name}</td>
+                <td onClick={() => setCurrentItem(item)}><img src={
+                  item.part === 'weapon' ? images[item.grade][item.type] :
+                  item.part === 'armor' ? images[item.grade][item.type][item.material] :
+                  null
+                }/>{item.item_name}</td>
                 <td>{item.total_stats[currentFilter]}</td>
               </tr>
           )})}
