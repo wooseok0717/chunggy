@@ -172,9 +172,34 @@ import heroichandguards from '../assets/armors/gloves/heroichandguards.png'
 import superiorhandguards from '../assets/armors/gloves/superiorhandguards.png'
 import commonhandguards from '../assets/armors/gloves/commonhandguards.png'
 
+import eternalnecklace from '../assets/accessary/eternalnecklace.png'
+import fablednecklace from '../assets/accessary/fablednecklace.png'
+import heroicnecklace from '../assets/accessary/heroicnecklace.png'
+import superiornecklace from '../assets/accessary/superiornecklace.png'
+import commonnecklace from '../assets/accessary/commonnecklace.png'
 
+import eternalearrings from '../assets/accessary/eternalearrings.png'
+import fabledearrings from '../assets/accessary/fabledearrings.png'
+import heroicearrings from '../assets/accessary/heroicearrings.png'
+import superiorearrings from '../assets/accessary/superiorearrings.png'
+import commonearrings from '../assets/accessary/commonearrings.png'
+
+import eternalring from '../assets/accessary/eternalring.png'
+import fabledring from '../assets/accessary/fabledring.png'
+import heroicring from '../assets/accessary/heroicring.png'
+import superiorring from '../assets/accessary/superiorring.png'
+import commonring from '../assets/accessary/commonring.png'
+
+import eternalbelt from '../assets/accessary/eternalbelt.png'
+import fabledbelt from '../assets/accessary/fabledbelt.png'
+import heroicbelt from '../assets/accessary/heroicbelt.png'
+import superiorbelt from '../assets/accessary/superiorbelt.png'
+import commonbelt from '../assets/accessary/commonbelt.png'
+
+import wing from '../assets/accessary/wing.png'
 
 const images = {
+  wing: wing,
   eternal: {
     bow: eternalbow,
     dagger: eternaldagger,
@@ -184,6 +209,10 @@ const images = {
     polearm: eternalpolearm,
     spellbook: eternalspellbook,
     sword: eternalsword,
+    ring: eternalring,
+    earring: eternalearrings,
+    belt: eternalbelt,
+    necklace: eternalnecklace,
     shoes: {
       leather: eternalboots,
       cloth: eternalshoes,
@@ -224,6 +253,10 @@ const images = {
     polearm: fabledpolearm,
     spellbook: fabledspellbook,
     sword: fabledsword,
+    ring: fabledring,
+    earring: fabledearrings,
+    belt: fabledbelt,
+    necklace: fablednecklace,
     shoes: {
       leather: fabledboots,
       cloth: fabledshoes,
@@ -264,6 +297,10 @@ const images = {
     polearm: heroicpolearm,
     spellbook: heroicspellbook,
     sword: heroicsword,
+    ring: heroicring,
+    earring: heroicearrings,
+    belt: heroicbelt,
+    necklace: heroicnecklace,
     shoes: {
       leather: heroicboots,
       cloth: heroicshoes,
@@ -304,6 +341,10 @@ const images = {
     polearm: superiorpolearm,
     spellbook: superiorspellbook,
     sword: superiorsword,
+    ring: superiorring,
+    earring: superiorearrings,
+    belt: superiorbelt,
+    necklace: superiornecklace,
     shoes: {
       leather: superiorboots,
       cloth: superiorshoes,
@@ -344,6 +385,10 @@ const images = {
     polearm: commonpolearm,
     spellbook: commonspellbook,
     sword: commonsword,
+    ring: commonring,
+    earring: commonearrings,
+    belt: commonbelt,
+    necklace: commonnecklace,
     shoes: {
       leather: commonboots,
       cloth: commonshoes,
