@@ -100,6 +100,30 @@ import heroichauberk from '../assets/armors/top/heroichauberk.png'
 import superiorhauberk from '../assets/armors/top/superiorhauberk.png'
 import commonhauberk from '../assets/armors/top/commonhauberk.png'
 
+import eternalbreeches from '../assets/armors/bottom/eternalbreeches.png'
+import fabledbreeches from '../assets/armors/bottom/fabledbreeches.png'
+import heroicbreeches from '../assets/armors/bottom/heroicbreeches.png'
+import superiorbreeches from '../assets/armors/bottom/superiorbreeches.png'
+import commonbreeches from '../assets/armors/bottom/commonbreeches.png'
+
+import eternalgreaves from '../assets/armors/bottom/eternalgreaves.png'
+import fabledgreaves from '../assets/armors/bottom/fabledgreaves.png'
+import heroicgreaves from '../assets/armors/bottom/heroicgreaves.png'
+import superiorgreaves from '../assets/armors/bottom/superiorgreaves.png'
+import commongreaves from '../assets/armors/bottom/commongreaves.png'
+
+import eternalchausses from '../assets/armors/bottom/eternalchausses.png'
+import fabledchausses from '../assets/armors/bottom/fabledchausses.png'
+import heroicchausses from '../assets/armors/bottom/heroicchausses.png'
+import superiorchausses from '../assets/armors/bottom/superiorchausses.png'
+import commonchausses from '../assets/armors/bottom/commonchausses.png'
+
+import eternalleggings from '../assets/armors/bottom/eternalleggings.png'
+import fabledleggings from '../assets/armors/bottom/fabledleggings.png'
+import heroicleggings from '../assets/armors/bottom/heroicleggings.png'
+import superiorleggings from '../assets/armors/bottom/superiorleggings.png'
+import commonleggings from '../assets/armors/bottom/commonleggings.png'
+
 const images = {
   eternal: {
     bow: eternalbow,
@@ -115,6 +139,18 @@ const images = {
       cloth: eternalshoes,
       chain: eternalbrogans,
       plate: eternalsabatons
+    },
+    top: {
+      leather: eternaljerkin,
+      cloth: eternaltunic,
+      chain: eternalhauberk,
+      plate: eternalbreastplate
+    },
+    bottom: {
+      leather: eternalbreeches,
+      cloth: eternalleggings,
+      chain: eternalchausses,
+      plate: eternalgreaves
     }
   },
   fabled: {
@@ -131,6 +167,18 @@ const images = {
       cloth: fabledshoes,
       chain: fabledbrogans,
       plate: fabledsabatons
+    },
+    top: {
+      leather: fabledjerkin,
+      cloth: fabledtunic,
+      chain: fabledhauberk,
+      plate: fabledbreastplate
+    },
+    bottom: {
+      leather: fabledbreeches,
+      cloth: fabledleggings,
+      chain: fabledchausses,
+      plate: fabledgreaves
     }
   },
   heroic: {
@@ -147,6 +195,18 @@ const images = {
       cloth: heroicshoes,
       chain: heroicbrogans,
       plate: heroicsabatons
+    },
+    top: {
+      leather: heroicjerkin,
+      cloth: heroictunic,
+      chain: heroichauberk,
+      plate: heroicbreastplate
+    },
+    bottom: {
+      leather: heroicbreeches,
+      cloth: heroicleggings,
+      chain: heroicchausses,
+      plate: heroicgreaves
     }
   },
   superior: {
@@ -163,6 +223,18 @@ const images = {
       cloth: superiorshoes,
       chain: superiorbrogans,
       plate: superiorsabatons
+    },
+    top: {
+      leather: superiorjerkin,
+      cloth: superiortunic,
+      chain: superiorhauberk,
+      plate: superiorbreastplate
+    },
+    bottom: {
+      leather: superiorbreeches,
+      cloth: superiorleggings,
+      chain: superiorchausses,
+      plate: superiorgreaves
     }
   },
   common: {
@@ -179,6 +251,18 @@ const images = {
       cloth: commonshoes,
       chain: commonbrogans,
       plate: commonsabatons
+    },
+    top: {
+      leather: commonjerkin,
+      cloth: commontunic,
+      chain: commonhauberk,
+      plate: commonbreastplate
+    },
+    bottom: {
+      leather: commonbreeches,
+      cloth: commonleggings,
+      chain: commonchausses,
+      plate: commongreaves
     }
   },
 }
