@@ -124,6 +124,56 @@ import heroicleggings from '../assets/armors/bottom/heroicleggings.png'
 import superiorleggings from '../assets/armors/bottom/superiorleggings.png'
 import commonleggings from '../assets/armors/bottom/commonleggings.png'
 
+import eternalpauldrons from '../assets/armors/shoulder/eternalpauldrons.png'
+import fabledpauldrons from '../assets/armors/shoulder/fabledpauldrons.png'
+import heroicpauldrons from '../assets/armors/shoulder/heroicpauldrons.png'
+import superiorpauldrons from '../assets/armors/shoulder/superiorpauldrons.png'
+import commonpauldrons from '../assets/armors/shoulder/commonpauldrons.png'
+
+import eternalspaulders from '../assets/armors/shoulder/eternalspaulders.png'
+import fabledspaulders from '../assets/armors/shoulder/fabledspaulders.png'
+import heroicspaulders from '../assets/armors/shoulder/heroicspaulders.png'
+import superiorspaulders from '../assets/armors/shoulder/superiorspaulders.png'
+import commonspaulders from '../assets/armors/shoulder/commonspaulders.png'
+
+import eternalshoulderguards from '../assets/armors/shoulder/eternalshoulderguards.png'
+import fabledshoulderguards from '../assets/armors/shoulder/fabledshoulderguards.png'
+import heroicshoulderguards from '../assets/armors/shoulder/heroicshoulderguards.png'
+import superiorshoulderguards from '../assets/armors/shoulder/superiorshoulderguards.png'
+import commonshoulderguards from '../assets/armors/shoulder/commonshoulderguards.png'
+
+import eternalshoulderplates from '../assets/armors/shoulder/eternalshoulderplates.png'
+import fabledshoulderplates from '../assets/armors/shoulder/fabledshoulderplates.png'
+import heroicshoulderplates from '../assets/armors/shoulder/heroicshoulderplates.png'
+import superiorshoulderplates from '../assets/armors/shoulder/superiorshoulderplates.png'
+import commonshoulderplates from '../assets/armors/shoulder/commonshoulderplates.png'
+
+import eternalvambrace from '../assets/armors/gloves/eternalvambrace.png'
+import fabledvambrace from '../assets/armors/gloves/fabledvambrace.png'
+import heroicvambrace from '../assets/armors/gloves/heroicvambrace.png'
+import superiorvambrace from '../assets/armors/gloves/superiorvambrace.png'
+import commonvambrace from '../assets/armors/gloves/commonvambrace.png'
+
+import eternalgauntlets from '../assets/armors/gloves/eternalgauntlets.png'
+import fabledgauntlets from '../assets/armors/gloves/fabledgauntlets.png'
+import heroicgauntlets from '../assets/armors/gloves/heroicgauntlets.png'
+import superiorgauntlets from '../assets/armors/gloves/superiorgauntlets.png'
+import commongauntlets from '../assets/armors/gloves/commongauntlets.png'
+
+import eternalgloves from '../assets/armors/gloves/eternalgloves.png'
+import fabledgloves from '../assets/armors/gloves/fabledgloves.png'
+import heroicgloves from '../assets/armors/gloves/heroicgloves.png'
+import superiorgloves from '../assets/armors/gloves/superiorgloves.png'
+import commongloves from '../assets/armors/gloves/commongloves.png'
+
+import eternalhandguards from '../assets/armors/gloves/eternalhandguards.png'
+import fabledhandguards from '../assets/armors/gloves/fabledhandguards.png'
+import heroichandguards from '../assets/armors/gloves/heroichandguards.png'
+import superiorhandguards from '../assets/armors/gloves/superiorhandguards.png'
+import commonhandguards from '../assets/armors/gloves/commonhandguards.png'
+
+
+
 const images = {
   eternal: {
     bow: eternalbow,
@@ -151,6 +201,18 @@ const images = {
       cloth: eternalleggings,
       chain: eternalchausses,
       plate: eternalgreaves
+    },
+    shoulder: {
+      leather: eternalshoulderguards,
+      cloth: eternalpauldrons,
+      chain: eternalspaulders,
+      plate: eternalshoulderplates
+    },
+    gloves: {
+      leather: eternalvambrace,
+      cloth: eternalgloves,
+      chain: eternalhandguards,
+      plate: eternalgauntlets
     }
   },
   fabled: {
@@ -179,6 +241,18 @@ const images = {
       cloth: fabledleggings,
       chain: fabledchausses,
       plate: fabledgreaves
+    },
+    shoulder: {
+      leather: fabledshoulderguards,
+      cloth: fabledpauldrons,
+      chain: fabledspaulders,
+      plate: fabledshoulderplates
+    },
+    gloves: {
+      leather: fabledvambrace,
+      cloth: fabledgloves,
+      chain: fabledhandguards,
+      plate: fabledgauntlets
     }
   },
   heroic: {
@@ -207,6 +281,18 @@ const images = {
       cloth: heroicleggings,
       chain: heroicchausses,
       plate: heroicgreaves
+    },
+    shoulder: {
+      leather: heroicshoulderguards,
+      cloth: heroicpauldrons,
+      chain: heroicspaulders,
+      plate: heroicshoulderplates
+    },
+    gloves: {
+      leather: heroicvambrace,
+      cloth: heroicgloves,
+      chain: heroichandguards,
+      plate: heroicgauntlets
     }
   },
   superior: {
@@ -235,6 +321,18 @@ const images = {
       cloth: superiorleggings,
       chain: superiorchausses,
       plate: superiorgreaves
+    },
+    shoulder: {
+      leather: superiorshoulderguards,
+      cloth: superiorpauldrons,
+      chain: superiorspaulders,
+      plate: superiorshoulderplates
+    },
+    gloves: {
+      leather: superiorvambrace,
+      cloth: superiorgloves,
+      chain: superiorhandguards,
+      plate: superiorgauntlets
     }
   },
   common: {
@@ -263,6 +361,18 @@ const images = {
       cloth: commonleggings,
       chain: commonchausses,
       plate: commongreaves
+    },
+    shoulder: {
+      leather: commonshoulderguards,
+      cloth: commonpauldrons,
+      chain: commonspaulders,
+      plate: commonshoulderplates
+    },
+    gloves: {
+      leather: commonvambrace,
+      cloth: commongloves,
+      chain: commonhandguards,
+      plate: commongauntlets
     }
   },
 }
