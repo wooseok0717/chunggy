@@ -12,6 +12,7 @@ export default function Database ({currentUser, setCurrentItem}) {
   const [currentFilter, setCurrentFilter] = useState('accuracy');
   const [currentList, setCurrentList] = useState([]);
   const [addItem, setAddItem] = useState(false);
+  const [material, setMaterial] = useState();
 
   const validTypes = {
     weapon : ['bow', 'chainsword', 'dagger', 'greatsword', 'mace', 'orb', 'polearm', 'spellbook', 'staff', 'sword'],
@@ -27,10 +28,13 @@ export default function Database ({currentUser, setCurrentItem}) {
   }
 
   useEffect(() => {
+    if (part !== 'armor' && type !== 'headgear') {
+      setMaterial();
+    }
     if (part !== undefined && type !== undefined) {
       handleSearch();
     }
-  },[part,type,grade,input,currentFilter])
+  },[part,type,grade,input,currentFilter,material])
 
   const handleSearch = () => {
     let grades = [];
@@ -40,7 +44,7 @@ export default function Database ({currentUser, setCurrentItem}) {
       }
     }
     const data = {
-      part, type, grades, input, currentFilter
+      part, type, grades, input, currentFilter, material
     }
     axios.get('/api/items', {params: data})
     .then(res => setCurrentList(res.data))
@@ -74,6 +78,18 @@ export default function Database ({currentUser, setCurrentItem}) {
           )
         })}
       </select>
+      {(part === 'armor' || type === 'headgear') && (
+        <div>
+          Material:
+          <select onChange={e => setMaterial(e.target.value)}>
+            <option value=''selected disabled hidden>choose material</option>
+            <option value='chain'>chain</option>
+            <option value='cloth'>cloth</option>
+            <option value='leather'>leather</option>
+            <option value='plate'>plate</option>
+          </select>
+        </div>
+      )}
       </>) : (<></>)}
       Grade:
       <input type='checkbox' onChange={() => handleGrade('common')} defaultChecked/><span>common</span>
