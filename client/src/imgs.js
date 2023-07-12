@@ -76,7 +76,29 @@ import heroicsabatons from '../assets/armors/shoes/heroicsabatons.png'
 import superiorsabatons from '../assets/armors/shoes/superiorsabatons.png'
 import commonsabatons from '../assets/armors/shoes/commonsabatons.png'
 
+import eternaljerkin from '../assets/armors/top/eternaljerkin.png'
+import fabledjerkin from '../assets/armors/top/fabledjerkin.png'
+import heroicjerkin from '../assets/armors/top/heroicjerkin.png'
+import superiorjerkin from '../assets/armors/top/superiorjerkin.png'
+import commonjerkin from '../assets/armors/top/commonjerkin.png'
 
+import eternaltunic from '../assets/armors/top/eternaltunic.png'
+import fabledtunic from '../assets/armors/top/fabledtunic.png'
+import heroictunic from '../assets/armors/top/heroictunic.png'
+import superiortunic from '../assets/armors/top/superiortunic.png'
+import commontunic from '../assets/armors/top/commontunic.png'
+
+import eternalbreastplate from '../assets/armors/top/eternalbreastplate.png'
+import fabledbreastplate from '../assets/armors/top/fabledbreastplate.png'
+import heroicbreastplate from '../assets/armors/top/heroicbreastplate.png'
+import superiorbreastplate from '../assets/armors/top/superiorbreastplate.png'
+import commonbreastplate from '../assets/armors/top/commonbreastplate.png'
+
+import eternalhauberk from '../assets/armors/top/eternalhauberk.png'
+import fabledhauberk from '../assets/armors/top/fabledhauberk.png'
+import heroichauberk from '../assets/armors/top/heroichauberk.png'
+import superiorhauberk from '../assets/armors/top/superiorhauberk.png'
+import commonhauberk from '../assets/armors/top/commonhauberk.png'
 
 const images = {
   eternal: {
