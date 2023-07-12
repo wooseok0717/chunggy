@@ -198,6 +198,30 @@ import commonbelt from '../assets/accessary/commonbelt.png'
 
 import wing from '../assets/accessary/wing.png'
 
+import eternalhood from '../assets/accessary/eternalhood.png'
+import fabledhood from '../assets/accessary/fabledhood.png'
+import heroichood from '../assets/accessary/heroichood.png'
+import superiorhood from '../assets/accessary/superiorhood.png'
+import commonhood from '../assets/accessary/commonhood.png'
+
+import eternalhat from '../assets/accessary/eternalhat.png'
+import fabledhat from '../assets/accessary/fabledhat.png'
+import heroichat from '../assets/accessary/heroichat.png'
+import superiorhat from '../assets/accessary/superiorhat.png'
+import commonhat from '../assets/accessary/commonhat.png'
+
+import eternalhelm from '../assets/accessary/eternalhelm.png'
+import fabledhelm from '../assets/accessary/fabledhelm.png'
+import heroichelm from '../assets/accessary/heroichelm.png'
+import superiorhelm from '../assets/accessary/superiorhelm.png'
+import commonhelm from '../assets/accessary/commonhelm.png'
+
+import eternalheadband from '../assets/accessary/eternalheadband.png'
+import fabledheadband from '../assets/accessary/fabledheadband.png'
+import heroicheadband from '../assets/accessary/heroicheadband.png'
+import superiorheadband from '../assets/accessary/superiorheadband.png'
+import commonheadband from '../assets/accessary/commonheadband.png'
+
 const images = {
   wing: wing,
   eternal: {
@@ -213,6 +237,12 @@ const images = {
     earring: eternalearrings,
     belt: eternalbelt,
     necklace: eternalnecklace,
+    headgear: {
+      leather: eternalhat,
+      cloth: eternalheadband,
+      chain: eternalhood,
+      plate: eternalhelm
+    },
     shoes: {
       leather: eternalboots,
       cloth: eternalshoes,
@@ -257,6 +287,12 @@ const images = {
     earring: fabledearrings,
     belt: fabledbelt,
     necklace: fablednecklace,
+    headgear: {
+      leather: fabledhat,
+      cloth: fabledheadband,
+      chain: fabledhood,
+      plate: fabledhelm
+    },
     shoes: {
       leather: fabledboots,
       cloth: fabledshoes,
@@ -301,6 +337,12 @@ const images = {
     earring: heroicearrings,
     belt: heroicbelt,
     necklace: heroicnecklace,
+    headgear: {
+      leather: heroichat,
+      cloth: heroicheadband,
+      chain: heroichood,
+      plate: heroichelm
+    },
     shoes: {
       leather: heroicboots,
       cloth: heroicshoes,
@@ -345,6 +387,12 @@ const images = {
     earring: superiorearrings,
     belt: superiorbelt,
     necklace: superiornecklace,
+    headgear: {
+      leather: superiorhat,
+      cloth: superiorheadband,
+      chain: superiorhood,
+      plate: superiorhelm
+    },
     shoes: {
       leather: superiorboots,
       cloth: superiorshoes,
@@ -389,6 +437,12 @@ const images = {
     earring: commonearrings,
     belt: commonbelt,
     necklace: commonnecklace,
+    headgear: {
+      leather: commonhat,
+      cloth: commonheadband,
+      chain: commonhood,
+      plate: commonhelm
+    },
     shoes: {
       leather: commonboots,
       cloth: commonshoes,
