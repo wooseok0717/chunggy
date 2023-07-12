@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import validStats from '../validStats';
+import daggerImg from '../../../assets/eternaldagger.png'
 
 export default function ItemList ({ currentList, currentFilter, setCurrentFilter, setCurrentItem }) {
 
@@ -23,7 +24,7 @@ export default function ItemList ({ currentList, currentFilter, setCurrentFilter
             }
             return (
               <tr>
-                <td onClick={() => setCurrentItem(item)}>{item.item_name}</td>
+                <td onClick={() => setCurrentItem(item)}><img src={daggerImg}/>{item.item_name}</td>
                 <td>{item.total_stats[currentFilter]}</td>
               </tr>
           )})}
