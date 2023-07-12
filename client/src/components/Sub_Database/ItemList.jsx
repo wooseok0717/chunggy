@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import validStats from '../validStats';
-import daggerImg from '../../../assets/eternaldagger.png'
+import images from '../../imgs.js';
 
 export default function ItemList ({ currentList, currentFilter, setCurrentFilter, setCurrentItem }) {
 
@@ -19,12 +19,13 @@ export default function ItemList ({ currentList, currentFilter, setCurrentFilter
             </td>
           </tr>
           {currentList.map(item => {
+            console.log(item);
             if (item.total_stats[currentFilter] === undefined) {
               item.total_stats[currentFilter] = 0;
             }
             return (
               <tr>
-                <td onClick={() => setCurrentItem(item)}><img src={daggerImg}/>{item.item_name}</td>
+                <td onClick={() => setCurrentItem(item)}><img src={images[item.grade][item.type]}/>{item.item_name}</td>
                 <td>{item.total_stats[currentFilter]}</td>
               </tr>
           )})}
