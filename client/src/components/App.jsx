@@ -6,6 +6,7 @@ import Authorize from './Sub_User/Authorize.jsx';
 import UserInfo from './Sub_User/UserInfo.jsx';
 import Database from './Database.jsx';
 import ItemDetails from './Sub_Database/ItemDetails.jsx';
+import Translator from './Translator.jsx';
 import Home from './Home.jsx';
 import axios from 'axios';
 
@@ -60,7 +61,9 @@ export default function App () {
       <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
       <Header setCurrentPage={setCurrentPage} />
       {currentPage === 'home' ? (<Home />):
-      currentPage === 'database' ? (<Database currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails item={currentItem}/>) : (<></>)
+      currentPage === 'database' ? (<Database currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails item={currentItem}/>)
+      : currentPage === 'translator' ? (<Translator />)
+      : (<></>)
       }
     </>
   )
