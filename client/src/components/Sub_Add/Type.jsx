@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Type ( {part, setType, setMaterial} ) {
+export default function Type ( {part, type, setType, setMaterial} ) {
   const validTypes = {
     weapon : ['bow', 'chainsword', 'dagger', 'greatsword', 'mace', 'orb', 'polearm', 'spellbook', 'staff', 'sword'],
     armor : ['top', 'bottom', 'shoulder', 'gloves', 'shoes'],
@@ -22,6 +22,15 @@ export default function Type ( {part, setType, setMaterial} ) {
         })}
       </select>
       {part === 'armor' && (
+        <select onChange={e => {setMaterial(e.target.value)}}>
+          <option value=''selected disabled hidden>choose a material</option>
+          <option value='chain'>chain</option>
+          <option value='cloth'>cloth</option>
+          <option value='leather'>leather</option>
+          <option value='plate'>plate</option>
+        </select>
+      )}
+      {type === 'headgear' && (
         <select onChange={e => {setMaterial(e.target.value)}}>
           <option value=''selected disabled hidden>choose a material</option>
           <option value='chain'>chain</option>

@@ -64,7 +64,7 @@ export default function Add ({currentUser, setAddItem}) {
             <ItemNumber setItemNumber={setItemNumber} />
             <ItemName setItemName={setItemName}/>
             <Part setPart={setPart} />
-            <Type part={part} setType={setType} setMaterial={setMaterial} />
+            <Type part={part} type={type} setType={setType} setMaterial={setMaterial} />
             <Grade setGrade={setGrade}/>
             <Level setLevel={setLevel}/>
             <Stats
