@@ -9,6 +9,7 @@ import ItemDetails from './Sub_Database/ItemDetails.jsx';
 import Translator from './Translator.jsx';
 import Home from './Home.jsx';
 import axios from 'axios';
+import discord from '../../assets/discord.png'
 
 export default function App () {
 
@@ -62,14 +63,19 @@ export default function App () {
 
   return (
     <>
-      {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut} getUser={getUser}/>)}
-      <Authorize userData={userData} currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
-      <Header setCurrentPage={setCurrentPage} />
-      {currentPage === 'home' ? (<Home />):
-      currentPage === 'database' ? (<Database userData={userData} currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails item={currentItem}/>)
-      : currentPage === 'translator' ? (<Translator />)
-      : (<></>)
-      }
+      <div className='content'>
+        {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut} getUser={getUser}/>)}
+        <Authorize userData={userData} currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
+        <Header setCurrentPage={setCurrentPage} />
+        {currentPage === 'home' ? (<Home />):
+        currentPage === 'database' ? (<Database userData={userData} currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails item={currentItem}/>)
+        : currentPage === 'translator' ? (<Translator />)
+        : (<></>)
+        }
+      </div>
+      <footer className="footer">
+        Join our community<a href="https://discord.gg/UV6c63ea" target="_blank"><img src={discord}/></a>
+      </footer>
     </>
   )
 }
