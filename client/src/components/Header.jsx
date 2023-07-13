@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar.jsx';
+import Logo from '../../assets/Logo.png'
 
 export default function Header ({setCurrentPage}) {
 

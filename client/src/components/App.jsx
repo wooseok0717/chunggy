@@ -63,10 +63,10 @@ export default function App () {
 
   return (
     <>
-      <div className='content'>
         {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut} getUser={getUser}/>)}
         <Authorize userData={userData} currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
         <Header setCurrentPage={setCurrentPage} />
+      <div className='content'>
         {currentPage === 'home' ? (<Home />):
         currentPage === 'database' ? (<Database userData={userData} currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails item={currentItem}/>)
         : currentPage === 'translator' ? (<Translator />)

@@ -10,8 +10,8 @@ body {
 }
 
 .logo img {
-  width: 350px;
-  height: 227px;
+  width: 332px;
+  height: 197px;
   object-fit: cover;
   object-position: 0% 10%;
 }
@@ -22,6 +22,7 @@ body {
   background-color: #484848;
   height: 3rem;
   align-items: center;
+  margin: 1% 0;
 }
 
 .nav-bar div {
@@ -64,11 +65,11 @@ body {
   flex-direction: row-reverse;
   margin-right: 1%;
   margin-top: 1%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   align-items: center;
 }
 
-.login button {
+.login button, .add-button button {
   background-color: #484848;
   border: none;
   border-radius: 10%;
@@ -90,7 +91,7 @@ body {
 }
 
 .content {
-  flex: 1;
+  margin: 0 8%;
 }
 
 .footer {
@@ -107,4 +108,57 @@ body {
 
 .footer img {
   height: 3rem;
+}
+
+span.common {
+  color: white;
+}
+
+span.superior {
+  color: rgb(110, 224, 69);
+}
+
+span.heroic {
+  color: rgb(98, 210, 244);
+}
+
+span.fabled {
+  color: rgb(211, 201, 65);
+}
+
+span.eternal {
+  color: rgb(246, 109, 72);
+}
+
+.add-button {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.part select, .type select, .material select {
+  padding: 8px;
+  border: 1px solid #cdcdcd;
+  border-radius: 4px;
+  outline: none;
+  width: 200px;
+  background-color: #464646;
+  color: white
+}
+
+.selection {
+  font-size: 1.3rem;
+  margin: 0.8% 0;
+}
+
+.search {
+  font-size: 1.3rem;
+}
+
+.search input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  width: 200px;
 }

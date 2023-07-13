@@ -63,7 +63,7 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
 
   return (
     <div>
-      <div>
+      <div className='add-button'>
         <button onClick={() => {
           if (userData.role === 'owner') {
             setAddItem(true)
@@ -76,51 +76,56 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
         }}>Add a new item</button>
       </div>
       {addItem && <Add currentUser={currentUser} setAddItem={setAddItem} />}
-      Part:
-      <select onChange={e => setPart(e.target.value)}>
-        <option value=''selected disabled hidden>choose part</option>
-        <option value='weapon'>Weapon</option>
-        <option value='armor'>Armor</option>
-        <option value='accessary'>Accessary</option>
-        <option value='shield'>Shield</option>
-      </select>
-      {part ? (
-      <>
-      Type:
-      <select onChange={e => {setType(e.target.value)}}>
-        <option value=''selected disabled hidden>choose type</option>
-        {validTypes[part].map((x) => {
-          return (
-            <option value={x}>{x}</option>
-          )
-        })}
-      </select>
-      {(part === 'armor' || type === 'headgear') && (
-        <div>
-          Material:
-          <select onChange={e => setMaterial(e.target.value)}>
-            <option value=''selected disabled hidden>choose material</option>
-            <option value='chain'>chain</option>
-            <option value='cloth'>cloth</option>
-            <option value='leather'>leather</option>
-            <option value='plate'>plate</option>
-          </select>
-        </div>
-      )}
-      </>) : (<></>)}
-      Grade:
-      <input type='checkbox' onChange={() => setCommon(!common)} defaultChecked/><span>common</span>
-      <input type='checkbox' onChange={() => setSuperior(!superior)} defaultChecked/><span>superior</span>
-      <input type='checkbox' onChange={() => setHeroic(!heroic)} defaultChecked/><span>heroic</span>
-      <input type='checkbox' onChange={() => setFabled(!fabled)} defaultChecked/><span>fabled</span>
-      <input type='checkbox' onChange={() => setEternal(!eternal)} defaultChecked/><span>eternal</span>
-      <div>
-        Search:
-        <input onChange={e => (setInput(e.target.value.toLowerCase()))}/>
+      <div className='part selection'>
+        Part:
+        <select onChange={e => setPart(e.target.value)}>
+          <option value=''selected disabled hidden>Select a part</option>
+          <option value='weapon'>Weapon</option>
+          <option value='armor'>Armor</option>
+          <option value='accessary'>Accessary</option>
+          <option value='shield'>Shield</option>
+        </select>
+        {!part && (<>please select part</>)}
       </div>
-      {!type && (<>please select type</>)}
-      {!part && (<>please select part</>)}
-      <button onClick={() => console.log(part, type, grade)}>Check states</button>
+      {part ? (
+      <div className='type selection'>
+        Type:
+        <select onChange={e => {setType(e.target.value)}}>
+          <option value=''selected disabled hidden>Select a type</option>
+          {validTypes[part].map((x) => {
+            return (
+              <option value={x}>{x[0].toUpperCase()+x.slice(1)}</option>
+            )
+          })}
+        </select>
+        {!type && (<>please select type</>)}
+
+      </div>) : (<></>)}
+      {(part === 'armor' || type === 'headgear') && (
+          <div className='material selection'>
+            Material:
+            <select onChange={e => setMaterial(e.target.value)}>
+              <option value=''selected disabled hidden>Select a material</option>
+              <option value='chain'>Chain</option>
+              <option value='cloth'>Cloth</option>
+              <option value='leather'>Leather</option>
+              <option value='plate'>Plate</option>
+            </select>
+            (Optional)
+          </div>
+        )}
+      <div className='grade selection'>
+        Grade:
+        <input type='checkbox' onChange={() => setCommon(!common)} defaultChecked/><span className='common'>Common</span>
+        <input type='checkbox' onChange={() => setSuperior(!superior)} defaultChecked/><span className='superior'>Superior</span>
+        <input type='checkbox' onChange={() => setHeroic(!heroic)} defaultChecked/><span className='heroic'>Heroic</span>
+        <input type='checkbox' onChange={() => setFabled(!fabled)} defaultChecked/><span className='fabled'>Fabled</span>
+        <input type='checkbox' onChange={() => setEternal(!eternal)} defaultChecked/><span className='eternal'>Eternal</span>
+      </div>
+      <div className='search selection'>
+        Search:
+        <input placeholder="Search..." onChange={e => (setInput(e.target.value.toLowerCase()))}/>
+      </div>
       <ItemList currentList={currentList} currentFilter={currentFilter} setCurrentFilter={setCurrentFilter} setCurrentItem={setCurrentItem}/>
     </div>
   )
