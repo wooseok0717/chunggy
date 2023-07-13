@@ -3,7 +3,7 @@ import axios from 'axios';
 import ItemList from './Sub_Database/ItemList.jsx'
 import Add from './Add.jsx'
 
-export default function Database ({currentUser, setCurrentItem}) {
+export default function Database ({currentUser, setCurrentItem, userData}) {
 
   const [part, setPart] = useState();
   const [type, setType] = useState();
@@ -56,7 +56,16 @@ export default function Database ({currentUser, setCurrentItem}) {
   return (
     <div>
       <div>
-        <button onClick={() => setAddItem(true)}>Add a new item</button>
+        <button onClick={() => {
+          if (userData.role === 'owner') {
+            setAddItem(true)
+          } else if (userData.role === 'manager') {
+            alert('please becareful when adding new item');
+            setAddItem(true);
+          } else {
+            alert('you dont have permission to add items to the database');
+          }
+        }}>Add a new item</button>
       </div>
       {addItem && <Add currentUser={currentUser} setAddItem={setAddItem} />}
       Part:

@@ -50,7 +50,7 @@ export default function Add ({currentUser, setAddItem}) {
     }
     console.log(config);
     axios.post('/api/items', config)
-    .then(setAddItem(false));
+    // .then(setAddItem(false));
   }
 
   return (
