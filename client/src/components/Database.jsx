@@ -77,7 +77,7 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
       </div>
       {addItem && <Add currentUser={currentUser} setAddItem={setAddItem} />}
       <div className='part selection'>
-        Part:
+        <span className='input-label'>Part:</span>
         <select onChange={e => setPart(e.target.value)}>
           <option value=''selected disabled hidden>Select a part</option>
           <option value='weapon'>Weapon</option>
@@ -89,7 +89,7 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
       </div>
       {part ? (
       <div className='type selection'>
-        Type:
+        <span className='input-label'>Type:</span>
         <select onChange={e => {setType(e.target.value)}}>
           <option value=''selected disabled hidden>Select a type</option>
           {validTypes[part].map((x) => {
@@ -103,7 +103,7 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
       </div>) : (<></>)}
       {(part === 'armor' || type === 'headgear') && (
           <div className='material selection'>
-            Material:
+            <span className='input-label'>Material:</span>
             <select onChange={e => setMaterial(e.target.value)}>
               <option value=''selected disabled hidden>Select a material</option>
               <option value='chain'>Chain</option>
@@ -115,7 +115,7 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
           </div>
         )}
       <div className='grade selection'>
-        Grade:
+        <span className='input-label'>Grade:</span>
         <input type='checkbox' onChange={() => setCommon(!common)} defaultChecked/><span className='common'>Common</span>
         <input type='checkbox' onChange={() => setSuperior(!superior)} defaultChecked/><span className='superior'>Superior</span>
         <input type='checkbox' onChange={() => setHeroic(!heroic)} defaultChecked/><span className='heroic'>Heroic</span>
@@ -123,7 +123,7 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
         <input type='checkbox' onChange={() => setEternal(!eternal)} defaultChecked/><span className='eternal'>Eternal</span>
       </div>
       <div className='search selection'>
-        Search:
+      <span className='input-label'>Search:</span>
         <input placeholder="Search..." onChange={e => (setInput(e.target.value.toLowerCase()))}/>
       </div>
       <ItemList currentList={currentList} currentFilter={currentFilter} setCurrentFilter={setCurrentFilter} setCurrentItem={setCurrentItem}/>
