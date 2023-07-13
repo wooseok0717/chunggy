@@ -18,6 +18,7 @@ export default function NavBar ({setCurrentPage}) {
         <div onClick={() => setCurrentPage('database')}>Item Database</div>
         <div onClick={() => setCurrentPage('translator')}>Translator</div>
         <div>Gear Simulator</div>
+        <div>Crafting</div>
     </div>
   );
 }

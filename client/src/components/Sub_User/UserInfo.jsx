@@ -1,19 +1,22 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
-export default function UserInfo ({currentUser, setFillOut}) {
+export default function UserInfo ({currentUser, setFillOut, getUser}) {
 
   const [ign, setIgn] = useState('');
   const [job, setJob] = useState('');
 
   const handleSubmit = () => {
     if (ign.length <= 3) {
-      alert('ign has to be longer than 3 letters');
+      alert('ign has to be longer than 2 characters long');
     } else if (job === '') {
       alert('select a class');
     } else {
       axios.post(`/api/user`, {ign,job,currentUser})
-      .then(() => {setFillOut(false)})
+      .then(() => {
+        setFillOut(false)
+        getUser(localStorage.email)
+      })
     }
   }
 

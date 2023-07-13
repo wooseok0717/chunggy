@@ -1,5 +1,6 @@
 body {
-  background-color: pink;
+  background-color: #676769;
+  color: #cdcdcd
 }
 
 .logo {
@@ -18,13 +19,12 @@ body {
 .nav-bar {
   display: flex;
   justify-content: space-evenly;
-  background-color: lightpink;
+  background-color: #484848;
   height: 3rem;
   align-items: center;
 }
 
 .nav-bar div {
-  color: white;
   font-size: 1.5rem;
 }
 
@@ -42,7 +42,7 @@ body {
 
 .modal-content {
   width: 500px;
-  background-color: #fff;
+  background-color: #484848;
 }
 
 .modal-header, .modal-footer {
@@ -59,4 +59,26 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+.login {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 1%;
+  margin-top: 1%;
+  font-size: 1.5rem;
+  align-items: center;
+}
 
+.login button {
+  background-color: #484848;
+  border: none;
+  border-radius: 10%;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 9px;
+  margin: 4px;
+  margin-left: 1%;
+  text-align: inherit;
+  text-decoration: none;
+}

@@ -13,9 +13,9 @@ import axios from 'axios';
 export default function App () {
 
   const [currentUser, SetCurrentUser] = useState(localStorage.email);
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState({});
   const [fillOut, setFillOut] = useState(false);
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState('database');
   const [currentItem, setCurrentItem] = useState();
 
   useEffect(() => {
@@ -27,15 +27,29 @@ export default function App () {
   const getUser = (email) => {
     axios.get(`/api/user?email=${email}`)
     .then((data) => {
-      setUserData(data.data)
+      if (typeof data.data === 'object') {
+        setUserData(data.data)
+      } else {
+        setUserData({});
+      }
     })
     .catch(() => console.log('failed'))
   }
 
   useEffect(() => {
     if (localStorage.email !== undefined) {
-      if (userData === '') {
+      if (userData === undefined) {
+        getUser(localStorage.email);
+      }
+    }
+  },[]);
+
+  useEffect(() => {
+    if (localStorage.email !== undefined) {
+      if (userData.name === undefined) {
         setFillOut(true);
+      } else {
+        setFillOut(false);
       }
     }
   },[userData]);
@@ -46,19 +60,10 @@ export default function App () {
     }
   },[fillOut])
 
-  useEffect(() => {
-    if (localStorage.email !== undefined) {
-      if (userData === undefined) {
-        getUser(localStorage.email);
-      }
-    }
-  },[]);
-
-
   return (
     <>
-      {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut}/>)}
-      <Authorize currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
+      {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut} getUser={getUser}/>)}
+      <Authorize userData={userData} currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
       <Header setCurrentPage={setCurrentPage} />
       {currentPage === 'home' ? (<Home />):
       currentPage === 'database' ? (<Database currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails item={currentItem}/>)
