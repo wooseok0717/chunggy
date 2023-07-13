@@ -19,7 +19,6 @@ module.exports ={
     })
   },
   searchByName: (req, res) => {
-    console.log(req.params.setName);
     const config = {
       method: 'get',
       baseURL,
@@ -36,7 +35,6 @@ module.exports ={
   verifyName: (req, res) => {
     axios.get(`${baseURL}/items/sets/verify?nameInput=${req.query.nameInput}`)
     .then(data => {
-      console.log(data.data);
       res.send(data.data)
     })
   }

@@ -10,7 +10,10 @@ export default function SetModal({setSetItem, setClicked, setSetName}) {
   const handleChange = e => {
     if (e.target.value.length) {
       axios.get(`api/sets/${e.target.value}/name`)
-      .then(res => setFilteredSet(res.data));
+      .then(res => {
+        console.log(res);
+        setFilteredSet(res.data)
+      });
     } else {
       setFilteredSet([]);
     }
@@ -32,11 +35,19 @@ export default function SetModal({setSetItem, setClicked, setSetName}) {
             Set you're looking for doesn't exist?
             <button onClick={() => setAddSet(true)}>Add a new set</button>
           </div>
-          {addSet && (<AddSet setAddSet={setAddSet}/>)}
+          {addSet && (
+            <AddSet
+              setAddSet={setAddSet}
+              setSetItem={setSetItem}
+              setClicked={setClicked}
+              setSetName={setSetName}
+
+            />
+          )}
           <input onChange={handleChange}/>
           <div className='currentList'>
           {filteredSet.map(setEntry => {
-            return (<button onClick={()=>{handleClick(setEntry)}}>{setEntry.name}</button>)
+            return (<button key={setEntry.id} onClick={()=>{handleClick(setEntry)}}>{setEntry.name}</button>)
           })}
           </div>
         </div>

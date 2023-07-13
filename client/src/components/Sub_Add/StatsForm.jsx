@@ -6,7 +6,7 @@ export default function StatsForm({list, listStats, setValue}) {
     listStats.map(statEntry => {
       if (statEntry === 'base attack') {
         return(
-          <div>
+          <div key={statEntry}>
             <span className='baseattack'>Min</span>
             <input
               onChange={
@@ -35,7 +35,7 @@ export default function StatsForm({list, listStats, setValue}) {
         )
       } else if (statEntry === 'base magical attack') {
         return(
-          <div>
+          <div key={statEntry}>
             <span className='magicalattack'>Min</span>
             <input
               onChange={
@@ -64,7 +64,7 @@ export default function StatsForm({list, listStats, setValue}) {
         )
       }
       return (
-        <div className='statEntry' key={statEntry}>
+        <div key={statEntry} className='statEntry'>
           <span className='statLable'>{statEntry}</span>
           <input
             onChange={e => {

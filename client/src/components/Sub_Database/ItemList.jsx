@@ -11,7 +11,7 @@ export default function ItemList ({ currentList, currentFilter, setCurrentFilter
         <div className='stat-col list-label'>
           <select onChange={e => setCurrentFilter(e.target.value)}>
             {validStats.sets.map(stat => (
-              <option value={stat}>{stat[0].toUpperCase()+stat.slice(1)}</option>
+              <option value={stat} key={stat}>{stat[0].toUpperCase()+stat.slice(1)}</option>
             ))}
           </select>
         </div>
@@ -22,7 +22,7 @@ export default function ItemList ({ currentList, currentFilter, setCurrentFilter
         }
         let name = item.item_name.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
         return (
-          <div className='list-row list-entry'>
+          <div className='list-row list-entry' key={item.item_name}>
             <div className='name-col name-entry' onClick={() => setCurrentItem(item)}><img src={
               item.part === 'weapon' ? images[item.grade][item.type] :
               item.part === 'armor' ? images[item.grade][item.type][item.material] :

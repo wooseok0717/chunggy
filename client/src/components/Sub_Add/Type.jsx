@@ -17,7 +17,7 @@ export default function Type ( {part, type, setType, setMaterial} ) {
         <option value=''selected disabled hidden>choose type</option>
         {validTypes[part].map((x) => {
           return (
-            <option value={x}>{x}</option>
+            <option key={x} value={x}>{x}</option>
           )
         })}
       </select>

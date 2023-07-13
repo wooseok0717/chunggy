@@ -68,10 +68,10 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
           if (userData.role === 'owner') {
             setAddItem(true)
           } else if (userData.role === 'manager') {
-            alert('please becareful when adding new item');
+            console.log('please becareful when adding new item');
             setAddItem(true);
           } else {
-            alert('you dont have permission to add items to the database');
+            console.log('you dont have permission to add items to the database');
           }
         }}>Add a new item</button>
       </div>
@@ -94,7 +94,7 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
           <option value=''selected disabled hidden>Select a type</option>
           {validTypes[part].map((x) => {
             return (
-              <option value={x}>{x[0].toUpperCase()+x.slice(1)}</option>
+              <option value={x} key={x}>{x[0].toUpperCase()+x.slice(1)}</option>
             )
           })}
         </select>

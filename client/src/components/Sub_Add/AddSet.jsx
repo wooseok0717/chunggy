@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import StatListEntry from './StatListEntry.jsx';
+import SetVerificationModal from './SetVerificationModal.jsx';
 import axios from 'axios';
 
-export default function AddSet ({setAddSet}) {
+export default function AddSet ({setSetItem, setClicked, setSetName, setAddSet}) {
 
   const [nameInput, setNameInput] = useState();
   const [name, setName] = useState();
@@ -12,6 +13,22 @@ export default function AddSet ({setAddSet}) {
   const [stageOneReq, setStageOneReq] = useState();
   const [stageTwoReq, setStageTwoReq] = useState();
   const [hiddenReq, setHiddenReq] = useState();
+  const [currentSet, setCurrentSet] = useState('');
+  const [needVerification, setNeedVerification] = useState(false);
+
+  const handleApproval = (id,name) => {
+    setSetItem(id);
+    setSetName(name);
+    setClicked(false);
+    setAddSet(false);
+    setNeedVerification(false);
+  }
+
+  useEffect(() => {
+    if (currentSet !== '') {
+      setNeedVerification(true);
+    }
+  },[currentSet])
 
   const handleSubmit = () => {
     console.log(name, stageOne, stageOneReq, stageTwo, stageTwoReq, hiddenEffect, hiddenReq);
@@ -19,7 +36,12 @@ export default function AddSet ({setAddSet}) {
       name, stageOne, stageOneReq, stageTwo, stageTwoReq, hiddenEffect, hiddenReq
     }
     axios.post('/api/sets', config)
-    .then(res => console.log(res))
+    .then(() => {
+      axios.get(`/api/sets/verify?nameInput=${nameInput}`)
+      .then(res => {
+        setCurrentSet(res.data);
+      })
+    })
     .catch(() => {
       console.log('something went wrong')
     })
@@ -28,10 +50,12 @@ export default function AddSet ({setAddSet}) {
   const handleVerification = () => {
     axios.get(`/api/sets/verify?nameInput=${nameInput}`)
     .then(res => {
+      setCurrentSet(res.data);
       if (typeof res.data === 'object') {
-        alert(`the set with the name ${nameInput} exists`)
+        console.log(`the set with the name ${nameInput} exists`)
       } else {
         setName(nameInput);
+        console.log(`the set with the name doesnt exist and it is good to use`)
       }
     })
   }
@@ -81,6 +105,7 @@ export default function AddSet ({setAddSet}) {
           <button onClick={handleSubmit}>add new set to the database</button>
           <button onClick={() => setAddSet(false)}>close</button>
         </div>
+        {needVerification && (<SetVerificationModal currentSet={currentSet} setCurrentSet={setCurrentSet} setNeedVerification={setNeedVerification} handleApproval={handleApproval}/>)}
       </div>
     </div>
   )
