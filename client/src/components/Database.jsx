@@ -7,7 +7,11 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
 
   const [part, setPart] = useState();
   const [type, setType] = useState();
-  const [grade, setGrade] = useState({common: true, superior: true, heroic: true, fabled: true, eternal: true});
+  const [common, setCommon] = useState(true);
+  const [superior, setSuperior] = useState(true);
+  const [heroic, setHeroic] = useState(true);
+  const [fabled, setFabled] = useState(true);
+  const [eternal, setEternal] = useState(true);
   const [input, setInput] = useState('');
   const [currentFilter, setCurrentFilter] = useState('accuracy');
   const [currentList, setCurrentList] = useState([]);
@@ -21,12 +25,6 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
     shield : ['shield']
   }
 
-  const handleGrade = (g) => {
-    let temp = grade;
-    temp[g] = !temp[g]
-    setGrade(temp);
-  }
-
   useEffect(() => {
     if (part !== 'armor' && type !== 'headgear') {
       setMaterial();
@@ -34,14 +32,24 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
     if (part !== undefined && type !== undefined) {
       handleSearch();
     }
-  },[part,type,grade,input,currentFilter,material])
+  },[part,type,input,currentFilter,material,common,superior,heroic,fabled,eternal])
 
   const handleSearch = () => {
     let grades = [];
-    for (let key in grade) {
-      if (grade[key]) {
-        grades.push(key);
-      }
+    if (common) {
+      grades.push('common')
+    }
+    if (superior) {
+      grades.push('superior')
+    }
+    if (heroic) {
+      grades.push('heroic')
+    }
+    if (fabled) {
+      grades.push('fabled')
+    }
+    if (eternal) {
+      grades.push('eternal')
     }
     const data = {
       part, type, grades, input, currentFilter, material
@@ -101,11 +109,11 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
       )}
       </>) : (<></>)}
       Grade:
-      <input type='checkbox' onChange={() => handleGrade('common')} defaultChecked/><span>common</span>
-      <input type='checkbox' onChange={() => handleGrade('superior')} defaultChecked/><span>superior</span>
-      <input type='checkbox' onChange={() => handleGrade('heroic')} defaultChecked/><span>heroic</span>
-      <input type='checkbox' onChange={() => handleGrade('fabled')} defaultChecked/><span>fabled</span>
-      <input type='checkbox' onChange={() => handleGrade('eternal')} defaultChecked/><span>eternal</span>
+      <input type='checkbox' onChange={() => setCommon(!common)} defaultChecked/><span>common</span>
+      <input type='checkbox' onChange={() => setSuperior(!superior)} defaultChecked/><span>superior</span>
+      <input type='checkbox' onChange={() => setHeroic(!heroic)} defaultChecked/><span>heroic</span>
+      <input type='checkbox' onChange={() => setFabled(!fabled)} defaultChecked/><span>fabled</span>
+      <input type='checkbox' onChange={() => setEternal(!eternal)} defaultChecked/><span>eternal</span>
       <div>
         Search:
         <input onChange={e => (setInput(e.target.value.toLowerCase()))}/>
