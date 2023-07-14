@@ -45,6 +45,8 @@ body {
   width: 500px;
   background-color: #484848;
   border-radius: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 .modal-header, .modal-footer {
@@ -205,7 +207,7 @@ span.eternal {
   background-color: #676769;
 }
 
-.item-list {
+.item-list, .user-list {
   background-color: #484848;
   padding: 1rem;
   border-radius: 1rem;
@@ -282,4 +284,23 @@ span.eternal {
   text-decoration: none;
   font-size: 1.3rem;
   color: #464646;
+}
+
+.email-entry {
+  width: 30%;
+}
+
+.list-row-entry {
+  min-width: 10%;
+}
+
+.list-row-entry select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  color: #cdcdcd;
 }

@@ -10,6 +10,7 @@ import Translator from './Translator.jsx';
 import Home from './Home.jsx';
 import axios from 'axios';
 import discord from '../../assets/discord.png'
+import ManageUser from './Sub_User/ManageUser.jsx';
 
 export default function App () {
 
@@ -64,12 +65,13 @@ export default function App () {
   return (
     <>
         {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut} getUser={getUser}/>)}
-        <Authorize userData={userData} currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser}/>
+        <Authorize userData={userData} currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser} setCurrentPage={setCurrentPage}/>
         <Header setCurrentPage={setCurrentPage} />
       <div className='content'>
         {currentPage === 'home' ? (<Home />):
         currentPage === 'database' ? (<Database userData={userData} currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails item={currentItem}/>)
         : currentPage === 'translator' ? (<Translator />)
+        : currentPage === 'manageuser' ? (<ManageUser userData={userData}/>)
         : (<></>)
         }
       </div>

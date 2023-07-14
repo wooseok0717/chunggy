@@ -21,5 +21,13 @@ module.exports = {
     .catch(() => {
       res.sendStatus(404);
     })
+  },
+  getUsers: (req, res) => {
+    axios.get(`${baseURL}/users`)
+    .then(data => res.send(data.data));
+  },
+  updateRole: (req, res) => {
+    axios.put(`${baseURL}/users/role`, req.body)
+    res.send('updated');
   }
 }

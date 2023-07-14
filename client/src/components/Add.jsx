@@ -75,8 +75,8 @@ export default function Add ({currentUser, setAddItem}) {
         maxEnchant, setItem, currentUser, abyss, korean
       }
       console.log(config);
-      // axios.post('/api/items', config)
-      // .then(setAddItem(false));
+      axios.post('/api/items', config)
+      .then(setAddItem(false));
     }
   }
 

@@ -24,4 +24,8 @@ router.get('/user', controllers.users.getUser);
 
 router.post('/user', controllers.users.createAUser);
 
+router.get('/users', controllers.users.getUsers);
+
+router.put('/user/role', controllers.users.updateRole);
+
 module.exports = router;
