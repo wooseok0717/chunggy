@@ -24,30 +24,31 @@ export default function ValidStatsModal({setClicked, setListStats, listStats, pa
   },[])
 
   return (
-
     <div className='modal'>
       <div className='modal-content'>
         <div className="modal-header">
           <h4 className='modal-title'>Possible stats</h4>
         </div>
         <div className='modal-body'>
-          {!stats.length && (<>Select part and type</>)}
-          {stats.map(stat => {
-            return (
-              <button
-                key={stat}
-                value={stat}
-                onClick={() => {
-                  setClicked(false);
-                  if (!listStats.includes(stat)) {
-                    setListStats(listStats.concat(stat))
-                  }
-                }}
-              >
-                {stat}
-              </button>
-            )
-          })}
+          <div className='button-list'>
+            {!stats.length && (<>Select part and type</>)}
+            {stats.map(stat => {
+              return (
+                <button
+                  key={stat}
+                  value={stat}
+                  onClick={() => {
+                    setClicked(false);
+                    if (!listStats.includes(stat)) {
+                      setListStats(listStats.concat(stat))
+                    }
+                  }}
+                >
+                  {stat.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')}
+                </button>
+              )
+            })}
+          </div>
         </div>
         <div className='modal-footer'>
           <button onClick={() => {setClicked(false)}}>close</button>

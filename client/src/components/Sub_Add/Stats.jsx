@@ -10,20 +10,24 @@ export default function Stats ({part, type, lineOne, lineTwo, setLineOne, setLin
   }
   return (
     <div className='stats'>
-      <StatListEntry
-        prompt={'Line One Stats:'}
-        type={type}
-        part={part}
-        list={lineOne}
-        setList={setLineOne}
-      />
-      <StatListEntry
-        prompt={'Line Two Stats:'}
-        type={type}
-        part={part}
-        list={lineTwo}
-        setList={setLineTwo}
-      />
+      <div>
+        <StatListEntry
+          prompt={'Line One Stats:'}
+          type={type}
+          part={part}
+          list={lineOne}
+          setList={setLineOne}
+        />
+      </div>
+      <div>
+        <StatListEntry
+          prompt={'Line Two Stats:'}
+          type={type}
+          part={part}
+          list={lineTwo}
+          setList={setLineTwo}
+        />
+      </div>
     </div>
   )
 }

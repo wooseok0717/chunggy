@@ -21,24 +21,26 @@ export default function Type ( {part, type, setType, setMaterial} ) {
           )
         })}
       </select>
-      {part === 'armor' && (
-        <select onChange={e => {setMaterial(e.target.value)}}>
-          <option value=''selected disabled hidden>choose a material</option>
-          <option value='chain'>chain</option>
-          <option value='cloth'>cloth</option>
-          <option value='leather'>leather</option>
-          <option value='plate'>plate</option>
-        </select>
-      )}
-      {type === 'headgear' && (
-        <select onChange={e => {setMaterial(e.target.value)}}>
-          <option value=''selected disabled hidden>choose a material</option>
-          <option value='chain'>chain</option>
-          <option value='cloth'>cloth</option>
-          <option value='leather'>leather</option>
-          <option value='plate'>plate</option>
-        </select>
-      )}
+      <div className='material'>
+        {part === 'armor' && (
+          <select onChange={e => {setMaterial(e.target.value)}}>
+            <option value=''selected disabled hidden>choose a material</option>
+            <option value='chain'>chain</option>
+            <option value='cloth'>cloth</option>
+            <option value='leather'>leather</option>
+            <option value='plate'>plate</option>
+          </select>
+        )}
+        {type === 'headgear' && (
+          <select onChange={e => {setMaterial(e.target.value)}}>
+            <option value=''selected disabled hidden>choose a material</option>
+            <option value='chain'>chain</option>
+            <option value='cloth'>cloth</option>
+            <option value='leather'>leather</option>
+            <option value='plate'>plate</option>
+          </select>
+        )}
+      </div>
     </div>
   )
 }

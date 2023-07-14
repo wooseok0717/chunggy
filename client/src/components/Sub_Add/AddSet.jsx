@@ -52,10 +52,10 @@ export default function AddSet ({setSetItem, setClicked, setSetName, setAddSet})
     .then(res => {
       setCurrentSet(res.data);
       if (typeof res.data === 'object') {
-        console.log(`the set with the name ${nameInput} exists`)
+        alert(`the set with the name ${nameInput} exists`)
       } else {
         setName(nameInput);
-        console.log(`the set with the name doesnt exist and it is good to use`)
+        alert(`the set with the name doesnt exist and it is good to use`)
       }
     })
   }

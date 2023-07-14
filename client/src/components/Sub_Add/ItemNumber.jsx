@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function ItemNumber ({setItemNumber}) {
+export default function ItemNumber ({itemNumber, setItemNumber, checkmark, xmark}) {
   const [idInput, setIdInput] = useState();
+  const [notValid, setNotValid] = useState(false);
 
   const handleVerification = () => {
     if (!/[^0-9]/.test(idInput)) {
@@ -10,8 +11,10 @@ export default function ItemNumber ({setItemNumber}) {
       .then(res => {
         if (res.data.item_name) {
           alert('this item number already exists in the db');
+          setNotValid(true);
         } else {
           alert('this item number is not in the db and good to use');
+          setNotValid(false);
           setItemNumber(idInput);
         }
       })
@@ -34,6 +37,8 @@ export default function ItemNumber ({setItemNumber}) {
       >
         Verify
       </button>
+      {itemNumber && (<img className='mark' src={checkmark}/>)}
+      {notValid && (<img className='mark' src={xmark} />)}
     </div>
   )
 }

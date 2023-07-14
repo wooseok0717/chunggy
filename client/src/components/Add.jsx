@@ -13,6 +13,8 @@ import SetItem from './Sub_Add/SetItem.jsx';
 import Abyss from './Sub_Add/Abyss.jsx';
 import Conditioning from './Sub_Add/Conditioning.jsx';
 import Korean from './Sub_Add/Korean.jsx';
+import checkmark from '../../assets/checkmark.png'
+import xmark from '../../assets/xmark.png'
 
 export default function Add ({currentUser, setAddItem}) {
   const [itemNumber, setItemNumber] = useState();
@@ -31,6 +33,7 @@ export default function Add ({currentUser, setAddItem}) {
   const [setItem, setSetItem] = useState();
   const [abyss, setAbyss] = useState({});
   const [korean, setKorean] = useState();
+  const [rerender, setRerender] =useState(0);
 
   useEffect(() => {
     if (part !== 'armor') {
@@ -39,18 +42,42 @@ export default function Add ({currentUser, setAddItem}) {
   },[part]);
 
   useEffect(() => {
+    setLineOne({});
+    setLineTwo({});
+    setConditionOne({});
+    setConditionTwo({});
+    setManastone({});
+    setAbyss({});
+    setRerender(rerender + 1);
+  },[part, type])
+
+  useEffect(() => {
     setType(undefined);
   },[part]);
 
   const handleSubmit = () => {
-    const config = {
-      itemNumber, itemName, part, type, material, grade, level,
-      lineOne, lineTwo, conditionOne, conditionTwo, manastone,
-      maxEnchant, setItem, currentUser, abyss, korean
+    if (itemNumber === undefined) {
+      alert('Please verify item number.');
+    } else if (itemName === undefined) {
+      alert('Please verify item name.');
+    } else if (part === undefined) {
+      alert('Please select a part.');
+    } else if (type === undefined) {
+      alert('Please select a type.');
+    } else if (part === 'armor' && material === undefined) {
+      alert('Please select a material.');
+    } else if (grade === undefined) {
+      alert('Please select a grade.');
+    } else {
+      const config = {
+        itemNumber, itemName, part, type, material, grade, level,
+        lineOne, lineTwo, conditionOne, conditionTwo, manastone,
+        maxEnchant, setItem, currentUser, abyss, korean
+      }
+      console.log(config);
+      // axios.post('/api/items', config)
+      // .then(setAddItem(false));
     }
-    console.log(config);
-    axios.post('/api/items', config)
-    // .then(setAddItem(false));
   }
 
   return (
@@ -60,9 +87,9 @@ export default function Add ({currentUser, setAddItem}) {
           <h4 className='modal-title'>Create new item</h4>
         </div>
         <div className='modal-body'>
-          <div className='Add'>
-            <ItemNumber setItemNumber={setItemNumber} />
-            <ItemName setItemName={setItemName}/>
+          <div className='add'>
+            <ItemNumber setItemNumber={setItemNumber} itemNumber={itemNumber} checkmark={checkmark} xmark={xmark}/>
+            <ItemName setItemName={setItemName} itemName={itemName} checkmark={checkmark} xmark={xmark}/>
             <Part setPart={setPart} />
             <Type part={part} type={type} setType={setType} setMaterial={setMaterial} />
             <Grade setGrade={setGrade}/>
@@ -74,11 +101,12 @@ export default function Add ({currentUser, setAddItem}) {
               setLineOne={setLineOne}
               lineTwo={lineTwo}
               setLineTwo={setLineTwo}
+              rerender={rerender}
             />
-            <Manastone setManastone={setManastone} manastone={manastone} />
-            <Enchant setMaxEnchant={setMaxEnchant} />
-            <SetItem setSetItem={setSetItem} />
-            <Abyss abyss={abyss} setAbyss={setAbyss} />
+            <Manastone setManastone={setManastone} manastone={manastone} rerender={rerender}/>
+            <Enchant setMaxEnchant={setMaxEnchant} rerender={rerender}/>
+            <SetItem setSetItem={setSetItem} rerender={rerender}/>
+            <Abyss abyss={abyss} setAbyss={setAbyss} rerender={rerender}/>
             <Conditioning
               part={part}
               type={type}
@@ -86,6 +114,7 @@ export default function Add ({currentUser, setAddItem}) {
               conditionTwo={conditionTwo}
               setConditionOne={setConditionOne}
               setConditionTwo={setConditionTwo}
+              rerender={rerender}
             />
             <Korean setKorean={setKorean}/>
 

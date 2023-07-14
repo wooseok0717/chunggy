@@ -44,6 +44,7 @@ body {
 .modal-content {
   width: 500px;
   background-color: #484848;
+  border-radius: 20px;
 }
 
 .modal-header, .modal-footer {
@@ -141,7 +142,7 @@ span.eternal {
   flex-direction: row-reverse;
 }
 
-.part select, .type select, .material select {
+.part select, .type select, .material select, .grade select {
   padding: 8px;
   border: 1px solid #cdcdcd;
   border-radius: 4px;
@@ -154,6 +155,10 @@ span.eternal {
 .selection {
   font-size: 1.3rem;
   margin: 0.8% 0;
+}
+
+.selection select {
+  margin-right: 1.3rem;
 }
 
 .search {
@@ -226,4 +231,55 @@ span.eternal {
 
 .input-label {
   margin-right: 0.5rem;
+}
+
+.setContainer {
+  align-items: flex-start;
+}
+
+.add > .form-input {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.mark {
+  width: 15px;
+}
+
+.add > .type {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.stats {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal button {
+  background-color: transparent;
+  border-radius: 15px;
+  color: #cdcdcd;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  margin: 2px;
+  text-align: inherit;
+  text-decoration: none;
+}
+
+.button-list button {
+  background-color: #cdcdcd;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  margin: 3px;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #464646;
 }
