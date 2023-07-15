@@ -8,6 +8,8 @@ router.get('/items', controllers.items.getItems)
 
 router.get('/items/verify/number', controllers.items.verifyByNumber);
 
+router.get('/items/bySetId', controllers.items.getBySetId);
+
 router.get('/items/verify/name', controllers.items.verifyByName);
 
 router.get('/items/:itemId/Id', controllers.items.getItemById);

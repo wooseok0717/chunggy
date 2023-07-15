@@ -10,6 +10,7 @@ export default function ItemDetails ({item}) {
 
   const [socket,setSocket] = useState([]);
   const [setDetails, setSetDetails] = useState();
+  const [itemList, setItemList]= useState([]);
 
   useEffect(() => {
     let arr = [];
@@ -31,6 +32,13 @@ export default function ItemDetails ({item}) {
       .then(({data}) => setSetDetails(data));
     }
   },[item])
+
+  useEffect(() => {
+    if (setDetails !== undefined) {
+      axios.get(`api/items/bySetId?setId=${item.set_id}`)
+      .then(({data}) => setItemList(data));
+    }
+  },[setDetails])
 
   const captipalize = (name) => {
     return (name.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' '))
@@ -103,17 +111,13 @@ export default function ItemDetails ({item}) {
       {setDetails !== undefined && (
         <div className='detail-set'>
           <div>
-            {setDetails.name}
-            <div>
-              {setDetails.name}
-            </div>
-            <div>
-              {setDetails.name}
-            </div>
-            <div>
-              {setDetails.name}
-            </div>
+            <span className={item.grade}>{captipalize(setDetails.name)}</span>
+            ({setDetails.hidden_req ? setDetails.hidden_req
+            :setDetails.level_two_req ? setDetails.level_two_req
+            :setDetails.level_one_req ? setDetails.level_one_req
+            : null})
           </div>
+          {itemList.map(current => (<div><span className={item.grade}>{captipalize(current.item_name)}</span></div>))}
         </div>
       )}
     </div>

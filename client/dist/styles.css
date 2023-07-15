@@ -136,15 +136,15 @@ span.common {
 }
 
 span.superior {
-  color: rgb(110, 224, 69);
+  color: #69e15e;
 }
 
 span.heroic {
-  color: rgb(98, 210, 244);
+  color: #4ccfff;
 }
 
 span.fabled {
-  color: rgb(255 238 0);
+  color: #f0b71c;
 }
 
 span.eternal {

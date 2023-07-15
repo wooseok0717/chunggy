@@ -1,6 +1,8 @@
 const axios = require('axios');
 
-const baseURL = 'http://54.219.235.85:3000'
+const devUrl = 'http://127.0.0.1:3000';
+const proUrl = 'http://54.219.235.85:3000';
+const baseURL = devUrl;
 
 module.exports ={
   getItemById: (req, res) => {
@@ -61,5 +63,9 @@ module.exports ={
     .then(data => {
       res.send(data.data)
     })
+  },
+  getBySetId: (req, res) => {
+    axios.get(`${baseURL}/items/setItems?setId=${req.query.setId}`)
+    .then(({data}) => res.send(data));
   }
 }
