@@ -6,7 +6,6 @@ import potentialsocket from '../../../assets/potentialsocket.png'
 
 export default function ItemDetails ({item}) {
   console.log(item)
-  console.log(setDetails);
 
   const [socket,setSocket] = useState([]);
   const [setDetails, setSetDetails] = useState();
@@ -61,8 +60,13 @@ export default function ItemDetails ({item}) {
           </span>
         </div>
         <div>
-          {captipalize(item.type)}
+          {item.material && captipalize(item.material)} {captipalize(item.type)}
         </div>
+        {item.level && (
+          <div>
+            Can be used above level {item.level}
+          </div>
+        )}
       </div>
       <div className='detail-line-one'>
         {Object.entries(item.line_one).map(([key, value]) => {
@@ -84,14 +88,16 @@ export default function ItemDetails ({item}) {
         {Object.entries(item.line_two).map(([key, value]) => {
           return (
             <div key={key}>
-              {key}: {value}
+              {captipalize(key)}: {value}
             </div>
           )
         })}
       </div>
-      <div className='detail-enchantment'>
-        Enchantment Level 0/{item.max_enchant}
-      </div>
+      {item.max_enchant && (
+        <div className='detail-enchantment'>
+          Enchantment Level 0/{item.max_enchant}
+        </div>
+      )}
       {item.manastones.min !== undefined && (
         <div className='detail-manastones'>
           <div>
@@ -118,6 +124,71 @@ export default function ItemDetails ({item}) {
             : null})
           </div>
           {itemList.map(current => (<div><span className={item.grade}>{captipalize(current.item_name)}</span></div>))}
+        </div>
+      )}
+      {setDetails !== undefined && (
+        <div className='detail-set-effect'>
+          {setDetails.level_one_req && (
+            <div>
+              <div>
+                Equip Effect ({setDetails.level_one_req})
+              </div>
+              {Object.entries(setDetails.level_one_stat).map(([key, value]) => {
+                return (
+                  <div key={key}>
+                    {captipalize(key)} {value}
+                  </div>
+                )
+              })}
+            </div>
+          )}
+          {setDetails.level_two_req && (
+            <div>
+              <div>
+                Equip Effect ({setDetails.level_two_req})
+              </div>
+              {Object.entries(setDetails.level_two_stat).map(([key, value]) => {
+                return (
+                  <div key={key}>
+                    {captipalize(key)} {value}
+                  </div>
+                )
+              })}
+            </div>
+          )}
+        </div>
+      )}
+      {setDetails !== undefined && (
+        <div>
+          {setDetails.hidden_req && (
+            <div>
+              <div>
+                Hidden Effect ({setDetails.hidden_req})
+              </div>
+              {Object.entries(setDetails.hidden_effect).map(([key, value]) => {
+                return (
+                  <div key={key}>
+                    {captipalize(key)} {value}
+                  </div>
+                )
+              })}
+            </div>
+          )}
+        </div>
+      )}
+      {item.abyss.ap && (
+        <div className='detail-abyss'>
+          <div>
+            Price:
+          </div>
+          <div>
+            Abyss Point: {item.abyss.ap}
+          </div>
+          {item.abyss.medal && (
+            <div>
+              {item.abyss.medalCount} of {captipalize(item.abyss.medal)} medals
+            </div>
+          )}
         </div>
       )}
     </div>

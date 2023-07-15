@@ -26,6 +26,10 @@ export default function Database ({currentUser, setCurrentItem, userData}) {
   }
 
   useEffect(() => {
+    setType();
+  },[part])
+
+  useEffect(() => {
     if (part !== 'armor' && type !== 'headgear') {
       setMaterial();
     }
