@@ -2,12 +2,13 @@
 import { initializeApp } from "firebase/app";
 import {getAuth, GoogleAuthProvider} from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyBKAuJwtCTIx-IS90TeDSuuaoHkrOSQYSg",
-  authDomain: "chunggy-development.firebaseapp.com",
-  projectId: "chunggy-development",
-  storageBucket: "chunggy-development.appspot.com",
-  messagingSenderId: "958381191116",
-  appId: "1:958381191116:web:d7f7c4e814952793953769"
+  apiKey: "AIzaSyBjX65NUl2gsEhQ5smK3QwtX79E8BRqF30",
+  authDomain: "chunggy-production-bfdd6.firebaseapp.com",
+  projectId: "chunggy-production-bfdd6",
+  storageBucket: "chunggy-production-bfdd6.appspot.com",
+  messagingSenderId: "802761399814",
+  appId: "1:802761399814:web:631d3cbbc79b6018f2ad87",
+  measurementId: "G-Z6C5ST049L"
 };
 
 // Initialize Firebase
