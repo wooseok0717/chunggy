@@ -105,3 +105,5 @@ typings/
 bundle.*
 
 .DS_Store
+
+googleSignin/*.js

@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const baseURL = 'http://127.0.0.1:3000'
+const baseURL = 'http://54.219.235.85:3000'
 
 module.exports ={
   getItemById: (req, res) => {

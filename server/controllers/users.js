@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const baseURL = 'http://127.0.0.1:3001';
+const baseURL = 'http://54.151.78.42:3001';
 
 module.exports = {
   getUser: (req, res) => {
