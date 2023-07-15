@@ -16,6 +16,8 @@ router.get('/items/:itemName/Name', controllers.items.getItemByName);
 
 router.get('/sets/:setName/name', controllers.sets.searchByName);
 
+router.get('/sets/id', controllers.sets.getSetWithId);
+
 router.get('/sets/verify', controllers.sets.verifyName);
 
 router.post('/sets', controllers.sets.createSet);

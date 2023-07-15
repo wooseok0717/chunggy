@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   background-color: #676769;
   color: #cdcdcd
@@ -91,21 +96,28 @@ body {
   margin-bottom: -3rem;
 }
 
-.app {
+#app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .content {
   margin: 0 8%;
 }
 
-.footer {
+.app-content {
+  min-height: calc(100% - 8%);
+  padding-bottom: 1rem;
+  flex-grow: 1;
+}
+
+footer {
   background-color: #484848;
-  padding: 20px;
+  padding: 6px 0;
   text-align: center;
-  position: fixed;
+  position: relative;
+  height: 8%;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -136,7 +148,7 @@ span.fabled {
 }
 
 span.eternal {
-  color: rgb(246, 109, 72);
+  color: #f08033;
 }
 
 .add-button {
@@ -303,4 +315,21 @@ span.eternal {
   font-size: inherit;
   cursor: pointer;
   color: #cdcdcd;
+}
+
+.item-detail-container {
+  background-color: #484848;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  width: 420px
+}
+
+.detail-name {
+  font-size: 1.2rem;
+}
+
+.item-detail-container > div {
+  border-bottom: 1px solid #cdcdcd;
+  padding: 1rem 0;
 }

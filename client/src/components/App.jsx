@@ -64,16 +64,18 @@ export default function App () {
 
   return (
     <>
+      <div className='app-content'>
         {fillOut && (<UserInfo currentUser={currentUser} setFillOut={setFillOut} getUser={getUser}/>)}
         <Authorize userData={userData} currentUser={currentUser} SetCurrentUser={SetCurrentUser} getUser={getUser} setCurrentPage={setCurrentPage}/>
         <Header setCurrentPage={setCurrentPage} />
-      <div className='content'>
-        {currentPage === 'home' ? (<Home />):
-        currentPage === 'database' ? (<Database userData={userData} currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails item={currentItem}/>)
-        : currentPage === 'translator' ? (<Translator />)
-        : currentPage === 'manageuser' ? (<ManageUser userData={userData}/>)
-        : (<></>)
-        }
+        <div className='content'>
+          {currentPage === 'home' ? (<Home />):
+          currentPage === 'database' ? (<Database userData={userData} currentUser={currentUser} setCurrentItem={setCurrentItem}/>) : currentPage === 'itemdetails' ? (<ItemDetails item={currentItem}/>)
+          : currentPage === 'translator' ? (<Translator />)
+          : currentPage === 'manageuser' ? (<ManageUser userData={userData}/>)
+          : (<></>)
+          }
+        </div>
       </div>
       <footer className="footer">
         Join our community<a href="https://discord.gg/UV6c63ea" target="_blank"><img src={discord}/></a>
