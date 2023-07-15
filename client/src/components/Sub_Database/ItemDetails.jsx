@@ -181,14 +181,14 @@ export default function ItemDetails ({item}) {
           <div>
             Price:
           </div>
-          <div>
-            Abyss Point: {item.abyss.ap}
-          </div>
           {item.abyss.medal && (
             <div>
               {item.abyss.medalCount} of {captipalize(item.abyss.medal)} medals
             </div>
           )}
+          <div>
+            {Number(item.abyss.ap).toLocaleString()} Abyss Points
+          </div>
         </div>
       )}
     </div>

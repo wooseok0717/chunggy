@@ -330,6 +330,10 @@ span.eternal {
 }
 
 .item-detail-container > div {
-  border-bottom: 1px solid #cdcdcd;
+  border-top: 1px solid #cdcdcd;
   padding: 1rem 0;
+}
+
+.item-detail-container > .detail-header {
+  border: none;
 }

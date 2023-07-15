@@ -2,7 +2,7 @@ const axios = require('axios');
 
 const devUrl = 'http://127.0.0.1:3000';
 const proUrl = 'http://54.219.235.85:3000';
-const baseURL = devUrl;
+const baseURL = proUrl;
 
 module.exports ={
   createSet: (req, res) => {
