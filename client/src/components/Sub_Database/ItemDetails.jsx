@@ -5,7 +5,6 @@ import emptysocket from '../../../assets/emptysocket.png'
 import potentialsocket from '../../../assets/potentialsocket.png'
 
 export default function ItemDetails ({item}) {
-  console.log(item)
 
   const [socket,setSocket] = useState([]);
   const [setDetails, setSetDetails] = useState();
@@ -53,7 +52,9 @@ export default function ItemDetails ({item}) {
             item.part === 'weapon' ? images[item.grade][item.type] :
             item.part === 'armor' ? images[item.grade][item.type][item.material] :
             item.type === 'wings' ? images.wing :
-            null
+            item.type === 'headgear' ? images[item.grade][item.type][item.material] :
+            item.part === 'accessary' ? images[item.grade][item.type]
+            :null
           }/>
           <span className={`detail-name ${item.grade}`}>
             {captipalize(item.item_name)}

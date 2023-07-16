@@ -13,7 +13,7 @@ export default function ValidStatsModal({setClicked, setListStats, listStats, pa
     } else if (part === 'armor') {
       setStats(validStats[type])
     } else if (part === 'accessary') {
-      if (type === 'helm' || type === 'belt' || type === 'wings') {
+      if ((type === 'headgear') || (type === 'belt') || (type === 'wings')) {
         setStats(validStats[type]);
       } else {
         setStats(validStats.acc)

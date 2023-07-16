@@ -27,7 +27,9 @@ export default function ItemList ({ currentList, currentFilter, setCurrentFilter
               item.part === 'weapon' ? images[item.grade][item.type] :
               item.part === 'armor' ? images[item.grade][item.type][item.material] :
               item.type === 'wings' ? images.wing :
-              null
+              item.type === 'headgear' ? images[item.grade][item.type][item.material] :
+              item.part === 'accessary' ? images[item.grade][item.type]
+              :null
             }/><span className={item.grade}>{name}</span></div>
             <div className='stat-col'>{item.total_stats[currentFilter]}</div>
           </div>

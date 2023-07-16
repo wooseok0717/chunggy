@@ -1,9 +1,9 @@
 const stats = {
-  helm: [
+  headgear: [
     'attack', 'block', 'concentration', 'crit spell', 'defense', 'earth resist',
     'enmity boost', 'evasion', 'fire resist', 'flight speed', 'healing boost', 'magic boost',
-    'magic resist', 'magic suppr', 'magical accuracy', 'max hp', 'max mp', 'pvp attack',
-    'pvp defense', 'paralysis resist', 'parry', 'silence resist', 'spell fortitude', 'spell resist',
+    'magic resist', 'magic suppr', 'magical accuracy', 'max hp', 'max mp', 'paralysis resist', 'parry', 'pvp attack',
+    'pvp defense', 'silence resist', 'spell fortitude', 'spell resist',
     'strike fortitude', 'strike resist', 'water resist', 'wind resist'
   ],
   belt: [
