@@ -222,10 +222,17 @@ import heroicheadband from '../assets/accessary/heroicheadband.png'
 import superiorheadband from '../assets/accessary/superiorheadband.png'
 import commonheadband from '../assets/accessary/commonheadband.png'
 
+import eternalchainsword from '../assets/weapons/eternalchainsword.png'
+import fabledchainsword from '../assets/weapons/fabledchainsword.png'
+import heroicchainsword from '../assets/weapons/heroicchainsword.png'
+import superiorchainsword from '../assets/weapons/superiorchainsword.png'
+import commonchainsword from '../assets/weapons/commonchainsword.png'
+
 const images = {
   wing: wing,
   eternal: {
     bow: eternalbow,
+    chainsword: eternalchainsword,
     dagger: eternaldagger,
     greatsword: eternalgreatsword,
     mace: eternalmace,
@@ -276,6 +283,7 @@ const images = {
   },
   fabled: {
     bow: fabledbow,
+    chainsword: fabledchainsword,
     dagger: fableddagger,
     greatsword: fabledgreatsword,
     mace: fabledmace,
@@ -326,6 +334,7 @@ const images = {
   },
   heroic: {
     bow: heroicbow,
+    chainsword: heroicchainsword,
     dagger: heroicdagger,
     greatsword: heroicgreatsword,
     mace: heroicmace,
@@ -376,6 +385,7 @@ const images = {
   },
   superior: {
     bow: superiorbow,
+    chainsword: superiorchainsword,
     dagger: superiordagger,
     greatsword: superiorgreatsword,
     mace: superiormace,
@@ -426,6 +436,7 @@ const images = {
   },
   common: {
     bow: commonbow,
+    chainsword: commonchainsword,
     dagger: commondagger,
     greatsword: commongreatsword,
     mace: commonmace,
